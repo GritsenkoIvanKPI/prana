@@ -1,0 +1,12 @@
+node_modules/
+temporary screenshots/
+.DS_Store
+
+# design reference screenshots (not part of the site)
+2.png
+3.png
+lunarch.framer.website_.png
+mobile.png
+
+# contains a live API key, not needed to run the site
+GEMINI_IMAGE_GENERATION.md
