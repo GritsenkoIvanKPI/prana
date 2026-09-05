@@ -214,8 +214,14 @@
   #langMenu.closed{ opacity:0; transform: scale(.96) translateY(-6px); pointer-events:none; }
 
   input::placeholder, textarea::placeholder{ color:#5f6f61; }
-  input, textarea{ background: rgba(245,242,232,.04); border:1px solid rgba(245,242,232,.14); color:#f5f2e8; }
-  input:focus, textarea:focus{ outline:none; border-color:#c6a15b; background: rgba(245,242,232,.06); }
+  input, textarea, select{ background: rgba(245,242,232,.04); border:1px solid rgba(245,242,232,.14); color:#f5f2e8; }
+  input:focus, textarea:focus, select:focus{ outline:none; border-color:#c6a15b; background: rgba(245,242,232,.06); }
+  select{
+    -webkit-appearance: none; appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c6a15b' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 1rem center; background-size: 18px;
+  }
+  select option{ background: #14251a; color: #f5f2e8; }
 
   @media (max-width: 767px){
     .heading-tight{ letter-spacing: -0.02em; }
@@ -944,7 +950,7 @@
         </div>
         <div class="mt-5">
           <label class="block text-sm text-prana-faint mb-2" for="fservice">What do you need?</label>
-          <select id="fservice" name="service" class="w-full rounded-lg px-4 py-3 text-sm">
+          <select id="fservice" name="service" class="w-full rounded-lg pl-4 pr-11 py-3 text-sm">
             <option>Full garden design &amp; build</option>
             <option>Lawn installation or renovation</option>
             <option>Irrigation system</option>
