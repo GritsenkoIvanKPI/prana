@@ -934,6 +934,10 @@
 
       <!-- form -->
       <form class="lg:col-span-3 reveal reveal-d1" id="enquiryForm">
+        <div class="absolute -left-[9999px]" aria-hidden="true">
+          <label for="fwebsite">Leave this field empty</label>
+          <input type="text" id="fwebsite" name="website" tabindex="-1" autocomplete="off">
+        </div>
         <div class="grid sm:grid-cols-2 gap-5">
           <div>
             <label class="block text-sm text-prana-faint mb-2" for="fname" data-i18n="form.fullName">Full name</label>
@@ -964,6 +968,7 @@
         </div>
         <button type="submit" class="btn btn-primary mt-7 w-full sm:w-auto" data-i18n="btn.submitEnquiryForm">Submit Enquiry</button>
         <p id="formNote" class="mt-4 text-sm text-prana-gold hidden" data-i18n="form.thankYou">Thank you — we'll be in touch within one business day.</p>
+        <p id="formError" class="mt-4 text-sm text-prana-dim hidden" data-i18n="form.errorNote">Something went wrong — please call or WhatsApp us directly at +34 951 234 567.</p>
       </form>
 
     </div>
@@ -1065,44 +1070,44 @@
       'services.eyebrow': `What We Do`, 'services.h2': `Four disciplines, one studio`,
       'services.1.title': `Landscape design`,
       'services.1.desc': `Masterplans that read the site first — sun path, slope, sea wind — then draw a garden that will still feel right in fifteen years, not fifteen months.`,
-      'services.2.title': `Planting &amp; soft landscaping`,
+      'services.2.title': `Planting & soft landscaping`,
       'services.2.desc': `Mediterranean and native Andalusian species selected for structure and scent as much as survival — olive, cypress, lavender and rosemary, planted to thrive without babying.`,
-      'services.3.title': `Lawns &amp; irrigation`,
+      'services.3.title': `Lawns & irrigation`,
       'services.3.desc': `Our founding specialism. Turf selection, drainage and smart watering engineered specifically for the Costa del Sol's long, dry summers — see the section below.`,
       'services.lawnLink': `Explore our lawn expertise →`,
-      'services.4.title': `Pools &amp; water features`,
+      'services.4.title': `Pools & water features`,
       'services.4.desc': `Infinity edges, natural stone waterfalls and reflecting pools, integrated into the planting plan rather than dropped onto it.`,
       'lawns.eyebrow': `Our Specialism`, 'lawns.h2': `Lawns, engineered for Andalusian summers`,
       'lawns.intro': `Lawns are where PRANA began, and where our engineering runs deepest. Every lawn we lay is chosen, drained and irrigated for the specific microclimate of your plot — not a catalogue default.`,
-      'lawns.1.title': `Natural &amp; artificial turf`,
+      'lawns.1.title': `Natural & artificial turf`,
       'lawns.1.desc': `Drought-resistant warm-season varieties — Bermuda, Zoysia, Paspalum — for full sun, and premium artificial turf for shaded terraces, rooftops and heavy-shade courtyards.`,
-      'lawns.2.title': `Smart irrigation &amp; water conservation`,
+      'lawns.2.title': `Smart irrigation & water conservation`,
       'lawns.2.desc': `Weather-linked automatic systems, drip lines for beds, and soil-moisture sensors that cut water use — designed within current Junta de Andalucía restrictions.`,
       'lawns.3.title': `Seasonal maintenance`,
       'lawns.3.desc': `Scheduled mowing, core aeration, overseeding and a two-stage fertilisation programme timed to the Mediterranean growing calendar, not a generic quarter.`,
       'quote.eyebrow': `The PRANA Standard`,
       'quote.text': `"A garden is the one part of a home that keeps changing. Ours are built to change well — into shade, into maturity, into thirty more Augusts."`,
-      'quote.role': `Founder &amp; Landscape Architect`,
+      'quote.role': `Founder & Landscape Architect`,
       'packages.eyebrow': `Service Packages`, 'packages.h2': `Ongoing care, tailored to your estate`,
       'packages.essential.title': `Essential Care`,
       'packages.essential.subtitle': `For low-maintenance gardens and lock-up-and-leave villas`,
       'packages.perMonth': `/month`,
-      'packages.essential.f1': `Weekly mowing &amp; edging`, 'packages.essential.f2': `Seasonal pruning`,
+      'packages.essential.f1': `Weekly mowing & edging`, 'packages.essential.f2': `Seasonal pruning`,
       'packages.essential.f3': `Irrigation checks`, 'packages.essential.f4': `Fertilisation, 2x/year`,
       'badge.mostPopular': `Most Popular`,
       'packages.signature.title': `Signature Care`,
       'packages.signature.subtitle': `Our most-chosen plan for full private villas`,
       'packages.signature.f1': `Everything in Essential`, 'packages.signature.f2': `Twice-weekly in peak season`,
-      'packages.signature.f3': `Full drip &amp; irrigation mgmt.`, 'packages.signature.f4': `Pest &amp; disease monitoring`,
+      'packages.signature.f3': `Full drip & irrigation mgmt.`, 'packages.signature.f4': `Pest & disease monitoring`,
       'packages.signature.f5': `Seasonal planting refresh`,
       'packages.estate.title': `Estate Care`,
       'packages.estate.subtitle': `Dedicated, on-site grounds management`,
       'packages.bespoke': `Bespoke`,
       'packages.estate.f1': `Everything in Signature`, 'packages.estate.f2': `Dedicated on-site gardener`,
-      'packages.estate.f3': `Pool &amp; water coordination`, 'packages.estate.f4': `Quarterly design review`,
+      'packages.estate.f3': `Pool & water coordination`, 'packages.estate.f4': `Quarterly design review`,
       'packages.estate.f5': `24/7 priority support`, 'btn.enquire': `Enquire`,
       'team.eyebrow': `The Studio`, 'team.h2': `Meet the team behind every garden`,
-      'team.role.founder': `Founder &amp; Landscape Architect`, 'team.role.designer': `Garden Designer`,
+      'team.role.founder': `Founder & Landscape Architect`, 'team.role.designer': `Garden Designer`,
       'team.role.irrigation': `Irrigation Engineer`, 'team.role.gardener': `Head Gardener`,
       'faq.eyebrow': `FAQ`,
       'faq.h2': `Frequently <span class="accent">Asked Questions</span>`,
@@ -1122,16 +1127,18 @@
       'faq.a6': `Our project managers and crews work comfortably in English, Spanish and Russian, so you're never without clear communication.`,
       'contact.eyebrow': `Get In Touch`, 'contact.h2': `Let's design your garden`,
       'contact.intro': `Tell us about your property and we'll arrange a site visit within a week.`,
-      'contact.phoneLabel': `Phone &amp; WhatsApp`, 'contact.emailLabel': `Email`,
-      'contact.studioLabel': `Studio &amp; Showroom`, 'contact.languagesLabel': `Languages spoken`,
+      'contact.phoneLabel': `Phone & WhatsApp`, 'contact.emailLabel': `Email`,
+      'contact.studioLabel': `Studio & Showroom`, 'contact.languagesLabel': `Languages spoken`,
       'form.fullName': `Full name`, 'form.phone': `Phone / WhatsApp`, 'form.email': `Email`,
       'form.whatDoYouNeed': `What do you need?`,
-      'form.opt1': `Full garden design &amp; build`, 'form.opt2': `Lawn installation or renovation`,
+      'form.opt1': `Full garden design & build`, 'form.opt2': `Lawn installation or renovation`,
       'form.opt3': `Irrigation system`, 'form.opt4': `Ongoing maintenance package`, 'form.opt5': `Something else`,
       'form.tellUs': `Tell us about your property`,
       'form.placeholder': `Location, approximate size, and what you have in mind...`,
       'btn.submitEnquiryForm': `Submit Enquiry`,
       'form.thankYou': `Thank you — we'll be in touch within one business day.`,
+      'form.errorNote': `Something went wrong — please call or WhatsApp us directly at +34 951 234 567.`,
+      'form.sending': `Sending…`,
       'footer.rights': `All rights reserved.`, 'footer.privacy': `Privacy Policy`, 'footer.terms': `Terms of Service`,
     },
     ru: {
@@ -1238,6 +1245,8 @@
       'form.placeholder': `Расположение, примерная площадь и что вы задумали...`,
       'btn.submitEnquiryForm': `Отправить заявку`,
       'form.thankYou': `Спасибо — мы свяжемся с вами в течение одного рабочего дня.`,
+      'form.errorNote': `Что-то пошло не так — пожалуйста, позвоните нам или напишите в WhatsApp по номеру +34 951 234 567.`,
+      'form.sending': `Отправка…`,
       'footer.rights': `Все права защищены.`, 'footer.privacy': `Политика конфиденциальности`, 'footer.terms': `Условия использования`,
     },
     es: {
@@ -1344,6 +1353,8 @@
       'form.placeholder': `Ubicación, tamaño aproximado y lo que tiene en mente...`,
       'btn.submitEnquiryForm': `Enviar Consulta`,
       'form.thankYou': `Gracias, nos pondremos en contacto en un día hábil.`,
+      'form.errorNote': `Algo salió mal — llámenos o escríbanos por WhatsApp directamente al +34 951 234 567.`,
+      'form.sending': `Enviando…`,
       'footer.rights': `Todos los derechos reservados.`, 'footer.privacy': `Política de privacidad`, 'footer.terms': `Términos de servicio`,
     },
   };
@@ -1763,11 +1774,50 @@
     });
   });
 
-  // enquiry form (static demo submit)
+  // enquiry form — posts to /api/lead, which forwards to Telegram server-side
   document.getElementById('enquiryForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    document.getElementById('formNote').classList.remove('hidden');
-    e.target.reset();
+    const form = e.target;
+    const formNote = document.getElementById('formNote');
+    const formError = document.getElementById('formError');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalLabel = submitBtn.textContent;
+
+    formNote.classList.add('hidden');
+    formError.classList.add('hidden');
+    submitBtn.disabled = true;
+    submitBtn.textContent = I18N[currentLang]['form.sending'];
+
+    const data = {
+      name: form.name.value.trim(),
+      phone: form.phone.value.trim(),
+      email: form.email.value.trim(),
+      service: form.service.value,
+      message: form.message.value.trim(),
+      website: form.website.value, // honeypot — left empty by real visitors
+      source: 'PRANA website contact form',
+      page: window.location.href,
+      submittedAt: new Date().toLocaleString('en-GB'),
+    };
+
+    fetch('/api/lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+      .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
+      .then((result) => {
+        if (!result || !result.ok) return Promise.reject('rejected');
+        formNote.classList.remove('hidden');
+        form.reset();
+      })
+      .catch(() => {
+        formError.classList.remove('hidden');
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+      });
   });
 
   // reveal on scroll
