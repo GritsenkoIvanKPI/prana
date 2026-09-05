@@ -10,3 +10,6 @@ mobile.png
 
 # contains a live API key, not needed to run the site
 GEMINI_IMAGE_GENERATION.md
+
+# raw source footage (69MB) — compressed web versions live in images/
+*.MOV
