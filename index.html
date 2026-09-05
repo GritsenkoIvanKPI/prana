@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" id="htmlRoot">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -246,12 +246,12 @@
       </a>
 
       <nav class="hidden lg:flex items-center gap-6 xl:gap-9 text-sm">
-        <a href="#philosophy" class="nav-link">Philosophy</a>
-        <a href="#portfolio" class="nav-link">Portfolio</a>
-        <a href="#services" class="nav-link">Services</a>
-        <a href="#lawns" class="nav-link">Lawns</a>
-        <a href="#packages" class="nav-link">Packages</a>
-        <a href="#contact" class="nav-link">Contact</a>
+        <a href="#philosophy" class="nav-link" data-i18n="nav.philosophy">Philosophy</a>
+        <a href="#portfolio" class="nav-link" data-i18n="nav.portfolio">Portfolio</a>
+        <a href="#services" class="nav-link" data-i18n="nav.services">Services</a>
+        <a href="#lawns" class="nav-link" data-i18n="nav.lawns">Lawns</a>
+        <a href="#packages" class="nav-link" data-i18n="nav.packages">Packages</a>
+        <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
       </nav>
 
       <div class="flex items-center gap-3">
@@ -268,26 +268,26 @@
         <div class="relative">
           <button id="langBtn" class="flex items-center gap-1.5 text-sm text-prana-dim hover:text-prana-ink border border-white/15 rounded-full pl-3 pr-2 py-1.5 transition-colors duration-300" aria-haspopup="true" aria-expanded="false">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9Z"/></svg>
-            <span>EN</span>
+            <span id="langBtnLabel">EN</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <div id="langMenu" class="closed absolute right-0 mt-2 w-40 rounded-lg border border-white/10 bg-prana-elevated py-1.5 text-sm">
-            <button class="w-full flex items-center justify-between px-4 py-2.5 text-prana-ink" disabled>
+            <button class="lang-option w-full flex items-center justify-between px-4 py-2.5 text-prana-ink hover:bg-white/5 transition-colors duration-200" data-lang="en">
               <span>English</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>
+              <svg class="lang-check" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>
             </button>
-            <button class="w-full flex items-center justify-between px-4 py-2.5 text-prana-faint cursor-not-allowed" disabled title="Coming soon">
+            <button class="lang-option w-full flex items-center justify-between px-4 py-2.5 text-prana-ink hover:bg-white/5 transition-colors duration-200" data-lang="ru">
               <span>Русский</span>
-              <span class="text-[10px] tracking-wider uppercase border border-white/10 rounded px-1.5 py-0.5">Soon</span>
+              <svg class="lang-check hidden" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>
             </button>
-            <button class="w-full flex items-center justify-between px-4 py-2.5 text-prana-faint cursor-not-allowed" disabled title="Coming soon">
+            <button class="lang-option w-full flex items-center justify-between px-4 py-2.5 text-prana-ink hover:bg-white/5 transition-colors duration-200" data-lang="es">
               <span>Español</span>
-              <span class="text-[10px] tracking-wider uppercase border border-white/10 rounded px-1.5 py-0.5">Soon</span>
+              <svg class="lang-check hidden" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>
             </button>
           </div>
         </div>
 
-        <a href="#contact" class="btn btn-primary btn-sm hidden sm:inline-flex">Submit an Enquiry</a>
+        <a href="#contact" class="btn btn-primary btn-sm hidden sm:inline-flex" data-i18n="btn.submitEnquiry">Submit an Enquiry</a>
 
         <button id="menuBtn" class="lg:hidden w-10 h-10 inline-flex items-center justify-center text-prana-ink" aria-label="Open menu" aria-expanded="false">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -306,18 +306,18 @@
     </button>
   </div>
   <nav class="flex flex-col gap-1 px-6 mt-6 text-3xl heading-tight">
-    <a href="#philosophy" class="mobile-link py-3 border-b border-white/10">Philosophy</a>
-    <a href="#portfolio" class="mobile-link py-3 border-b border-white/10">Portfolio</a>
-    <a href="#services" class="mobile-link py-3 border-b border-white/10">Services</a>
-    <a href="#lawns" class="mobile-link py-3 border-b border-white/10">Lawns</a>
-    <a href="#packages" class="mobile-link py-3 border-b border-white/10">Packages</a>
-    <a href="#team" class="mobile-link py-3 border-b border-white/10">Team</a>
-    <a href="#faq" class="mobile-link py-3 border-b border-white/10">FAQ</a>
-    <a href="#contact" class="mobile-link py-3 border-b border-white/10">Contact</a>
+    <a href="#philosophy" class="mobile-link py-3 border-b border-white/10" data-i18n="nav.philosophy">Philosophy</a>
+    <a href="#portfolio" class="mobile-link py-3 border-b border-white/10" data-i18n="nav.portfolio">Portfolio</a>
+    <a href="#services" class="mobile-link py-3 border-b border-white/10" data-i18n="nav.services">Services</a>
+    <a href="#lawns" class="mobile-link py-3 border-b border-white/10" data-i18n="nav.lawns">Lawns</a>
+    <a href="#packages" class="mobile-link py-3 border-b border-white/10" data-i18n="nav.packages">Packages</a>
+    <a href="#team" class="mobile-link py-3 border-b border-white/10" data-i18n="nav.team">Team</a>
+    <a href="#faq" class="mobile-link py-3 border-b border-white/10" data-i18n="nav.faq">FAQ</a>
+    <a href="#contact" class="mobile-link py-3 border-b border-white/10" data-i18n="nav.contact">Contact</a>
   </nav>
   <div class="mt-auto px-6 pb-10 flex flex-col gap-4">
     <a href="tel:+34951234567" class="text-prana-dim">+34 951 234 567</a>
-    <a href="#contact" class="btn btn-primary w-full">Submit an Enquiry</a>
+    <a href="#contact" class="btn btn-primary w-full" data-i18n="btn.submitEnquiry">Submit an Enquiry</a>
   </div>
 </div>
 
@@ -333,16 +333,16 @@
   <div class="hero-fade"></div>
 
   <div class="relative z-10 h-full max-w-[1400px] mx-auto px-6 md:px-10 flex flex-col justify-end pb-24 md:pb-28">
-    <p class="reveal eyebrow mb-5">Costa del Sol Landscape Studio</p>
-    <h1 class="reveal reveal-d1 heading-tight text-[2.1rem] leading-[1.08] sm:text-6xl md:text-[4.6rem] md:leading-[1.03] font-light max-w-4xl">
+    <p class="reveal eyebrow mb-5" data-i18n="hero.eyebrow">Costa del Sol Landscape Studio</p>
+    <h1 class="reveal reveal-d1 heading-tight text-[2.1rem] leading-[1.08] sm:text-6xl md:text-[4.6rem] md:leading-[1.03] font-light max-w-4xl" data-i18n-html="hero.h1">
       Gardens engineered<br class="hidden md:block"> for the <span class="accent">Mediterranean light</span>
     </h1>
-    <p class="reveal reveal-d2 mt-5 md:mt-6 max-w-xl text-prana-dim text-[15px] md:text-lg leading-[1.6] md:leading-[1.7]">
+    <p class="reveal reveal-d2 mt-5 md:mt-6 max-w-xl text-prana-dim text-[15px] md:text-lg leading-[1.6] md:leading-[1.7]" data-i18n="hero.sub">
       PRANA designs, plants and maintains exceptional outdoor spaces across Marbella, Benahavís and the Costa del Sol — from championship lawns to full estate landscapes.
     </p>
     <div class="reveal reveal-d3 mt-7 md:mt-9 flex flex-wrap items-center gap-4">
-      <a href="#contact" class="btn btn-primary">Submit an Enquiry</a>
-      <a href="#portfolio" class="btn btn-ghost">View Our Work</a>
+      <a href="#contact" class="btn btn-primary" data-i18n="btn.submitEnquiry">Submit an Enquiry</a>
+      <a href="#portfolio" class="btn btn-ghost" data-i18n="btn.viewOurWork">View Our Work</a>
     </div>
   </div>
 
@@ -351,7 +351,7 @@
 <!-- service area strip -->
 <div class="relative z-10 border-b border-white/[0.06] bg-prana-bg">
   <div class="max-w-[1400px] mx-auto px-6 md:px-10 py-5 flex flex-wrap items-center gap-x-10 gap-y-3 text-prana-faint text-xs tracking-[0.14em] uppercase">
-    <span class="text-prana-dim">Trusted across</span>
+    <span class="text-prana-dim" data-i18n="trustedAcross">Trusted across</span>
     <span>Marbella</span>
     <span>Puerto Banús</span>
     <span>Benahavís</span>
@@ -365,17 +365,17 @@
   <div class="max-w-[1400px] mx-auto px-6 md:px-10">
     <div class="grid md:grid-cols-2 gap-14 md:gap-20 items-center">
       <div>
-        <p class="reveal eyebrow mb-5">Our Philosophy</p>
-        <h2 class="reveal reveal-d1 heading-tight text-3xl md:text-[2.75rem] md:leading-[1.15] font-light">
+        <p class="reveal eyebrow mb-5" data-i18n="philosophy.eyebrow">Our Philosophy</p>
+        <h2 class="reveal reveal-d1 heading-tight text-3xl md:text-[2.75rem] md:leading-[1.15] font-light" data-i18n-html="philosophy.h2">
           We treat every garden as <span class="accent">architecture that grows.</span>
         </h2>
-        <p class="reveal reveal-d2 mt-6 text-prana-dim leading-[1.75] text-[15px] md:text-base">
+        <p class="reveal reveal-d2 mt-6 text-prana-dim leading-[1.75] text-[15px] md:text-base" data-i18n="philosophy.p1">
           Founded in 2009 by a landscape architect and a hydro-irrigation engineer, PRANA began with a simple frustration: gardens on the Costa del Sol were either imported wholesale from Northern Europe, or left to fight the Andalusian summer alone. We build the third way — planting schemes drawn from the region's own hills and coastline, engineered with the water discipline the climate demands.
         </p>
-        <p class="reveal reveal-d3 mt-4 text-prana-dim leading-[1.75] text-[15px] md:text-base">
+        <p class="reveal reveal-d3 mt-4 text-prana-dim leading-[1.75] text-[15px] md:text-base" data-i18n="philosophy.p2">
           Sixteen years on, our studio still keeps design, planting and irrigation under one roof — so the plan on paper is the garden that survives August.
         </p>
-        <a href="#team" class="reveal reveal-d3 inline-flex mt-8 btn btn-ghost btn-sm">Meet the Studio</a>
+        <a href="#team" class="reveal reveal-d3 inline-flex mt-8 btn btn-ghost btn-sm" data-i18n="btn.meetStudio">Meet the Studio</a>
       </div>
 
       <div class="reveal reveal-d2 img-zoom rounded-2xl overflow-hidden aspect-[4/3] border border-white/10">
@@ -388,19 +388,19 @@
     <div class="max-w-[1400px] mx-auto px-6 md:px-10 grid grid-cols-2 md:grid-cols-4">
       <div class="reveal py-10 md:py-14 md:pr-10 border-b md:border-b-0 md:border-r border-white/[0.07]">
         <div class="text-4xl md:text-5xl font-light text-prana-ink heading-tight">16<span class="text-prana-gold">+</span></div>
-        <div class="mt-2 text-sm text-prana-faint">Years of experience</div>
+        <div class="mt-2 text-sm text-prana-faint" data-i18n="stats.years">Years of experience</div>
       </div>
       <div class="reveal reveal-d1 py-10 md:py-14 md:px-10 border-b md:border-b-0 md:border-r border-white/[0.07]">
         <div class="text-4xl md:text-5xl font-light text-prana-ink heading-tight">140<span class="text-prana-gold">+</span></div>
-        <div class="mt-2 text-sm text-prana-faint">Properties transformed</div>
+        <div class="mt-2 text-sm text-prana-faint" data-i18n="stats.properties">Properties transformed</div>
       </div>
       <div class="reveal reveal-d2 py-10 md:py-14 md:px-10 md:border-r border-white/[0.07]">
         <div class="text-4xl md:text-5xl font-light text-prana-ink heading-tight">60<span class="text-prana-gold">+</span></div>
-        <div class="mt-2 text-sm text-prana-faint">Hectares maintained</div>
+        <div class="mt-2 text-sm text-prana-faint" data-i18n="stats.hectares">Hectares maintained</div>
       </div>
       <div class="reveal reveal-d3 py-10 md:py-14 md:pl-10">
         <div class="text-4xl md:text-5xl font-light text-prana-ink heading-tight">98<span class="text-prana-gold">%</span></div>
-        <div class="mt-2 text-sm text-prana-faint">Client satisfaction</div>
+        <div class="mt-2 text-sm text-prana-faint" data-i18n="stats.satisfaction">Client satisfaction</div>
       </div>
     </div>
   </div>
@@ -411,10 +411,10 @@
   <div class="max-w-[1400px] mx-auto px-6 md:px-10">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
       <div>
-        <p class="reveal eyebrow mb-5">Portfolio</p>
-        <h2 class="reveal reveal-d1 heading-tight text-3xl md:text-[2.75rem] font-light max-w-xl">Selected transformations</h2>
+        <p class="reveal eyebrow mb-5" data-i18n="portfolio.eyebrow">Portfolio</p>
+        <h2 class="reveal reveal-d1 heading-tight text-3xl md:text-[2.75rem] font-light max-w-xl" data-i18n="portfolio.h2">Selected transformations</h2>
       </div>
-      <p class="reveal reveal-d2 max-w-sm text-prana-dim leading-[1.7] text-[15px]">Scroll to move through each project, hover for the full case study, or use the toggle to see the site before PRANA began work.</p>
+      <p class="reveal reveal-d2 max-w-sm text-prana-dim leading-[1.7] text-[15px]" data-i18n="portfolio.intro">Scroll to move through each project, hover for the full case study, or use the toggle to see the site before PRANA began work.</p>
     </div>
   </div>
 
@@ -425,16 +425,16 @@
         <img class="img-before" src="images/case-cancelada-before.jpg" alt="Apartment terrace in Cancelada before landscaping — bare concrete, sea view">
         <img class="img-after" src="images/case-cancelada-after.jpg" alt="Apartment terrace in Cancelada after landscaping — living wall and lightweight planting">
         <div class="absolute inset-0 bg-gradient-to-t from-prana-bg/95 via-prana-bg/10 to-transparent pointer-events-none"></div>
-        <button class="toggle-compare absolute top-6 right-6 md:right-8 z-10 btn btn-primary btn-sm">View Before</button>
-        <span class="state-badge absolute top-6 left-6 md:left-8 z-10 pill">After</span>
+        <button class="toggle-compare absolute top-6 right-6 md:right-8 z-10 btn btn-primary btn-sm" data-i18n="btn.viewBefore">View Before</button>
+        <span class="state-badge absolute top-6 left-6 md:left-8 z-10 pill" data-i18n="badge.after">After</span>
         <div class="absolute bottom-6 md:bottom-10 left-6 md:left-8 right-6 md:right-8 max-w-sm md:max-w-lg">
           <div class="flex flex-wrap gap-2 mb-4">
-            <span class="pill">Terrace Garden</span>
-            <span class="pill">Living Wall</span>
+            <span class="pill" data-i18n="portfolio.c0.tag1">Terrace Garden</span>
+            <span class="pill" data-i18n="portfolio.c0.tag2">Living Wall</span>
           </div>
           <h3 class="text-3xl md:text-5xl font-light heading-tight">Ático Cancelada</h3>
           <p class="mt-2 text-prana-dim">Cancelada · 2024</p>
-          <p class="mt-3 text-sm md:text-base text-prana-dim leading-[1.6] max-w-md">A 40m² sea-view terrace landscaped within strict weight limits — lightweight planters, a living wall and timed drip irrigation.</p>
+          <p class="mt-3 text-sm md:text-base text-prana-dim leading-[1.6] max-w-md" data-i18n="portfolio.c0.desc">A 40m² sea-view terrace landscaped within strict weight limits — lightweight planters, a living wall and timed drip irrigation.</p>
         </div>
     </article>
 
@@ -443,16 +443,16 @@
         <img class="img-before" src="images/case-laquinta-before.jpg" alt="Villa plot in La Quinta before landscaping — bare sloped construction site">
         <img class="img-after" src="images/case-laquinta-after.jpg" alt="Villa plot in La Quinta after landscaping — full garden, lawn and pool terrace">
         <div class="absolute inset-0 bg-gradient-to-t from-prana-bg/95 via-prana-bg/10 to-transparent pointer-events-none"></div>
-        <button class="toggle-compare absolute top-6 right-6 md:right-8 z-10 btn btn-primary btn-sm">View Before</button>
-        <span class="state-badge absolute top-6 left-6 md:left-8 z-10 pill">After</span>
+        <button class="toggle-compare absolute top-6 right-6 md:right-8 z-10 btn btn-primary btn-sm" data-i18n="btn.viewBefore">View Before</button>
+        <span class="state-badge absolute top-6 left-6 md:left-8 z-10 pill" data-i18n="badge.after">After</span>
         <div class="absolute bottom-6 md:bottom-10 left-6 md:left-8 right-6 md:right-8 max-w-sm md:max-w-lg">
           <div class="flex flex-wrap gap-2 mb-4">
-            <span class="pill">Full Garden</span>
-            <span class="pill">New Lawn</span>
+            <span class="pill" data-i18n="portfolio.c1.tag1">Full Garden</span>
+            <span class="pill" data-i18n="portfolio.c1.tag2">New Lawn</span>
           </div>
           <h3 class="text-3xl md:text-5xl font-light heading-tight">Villa La Quinta</h3>
           <p class="mt-2 text-prana-dim">La Quinta · 2024</p>
-          <p class="mt-3 text-sm md:text-base text-prana-dim leading-[1.6] max-w-md">850m² of bare, sloped building site turned into a finished landscape in 5 weeks, cutting irrigation water use by 30%.</p>
+          <p class="mt-3 text-sm md:text-base text-prana-dim leading-[1.6] max-w-md" data-i18n="portfolio.c1.desc">850m² of bare, sloped building site turned into a finished landscape in 5 weeks, cutting irrigation water use by 30%.</p>
         </div>
     </article>
 
@@ -461,16 +461,16 @@
         <img class="img-before" src="images/case-sierrablanca-before.jpg" alt="Villa lawn in Sierra Blanca before restoration — worn, diseased patches">
         <img class="img-after" src="images/case-sierrablanca-after.jpg" alt="Villa lawn in Sierra Blanca after restoration — dense even green grass">
         <div class="absolute inset-0 bg-gradient-to-t from-prana-bg/95 via-prana-bg/10 to-transparent pointer-events-none"></div>
-        <button class="toggle-compare absolute top-6 right-6 md:right-8 z-10 btn btn-primary btn-sm">View Before</button>
-        <span class="state-badge absolute top-6 left-6 md:left-8 z-10 pill">After</span>
+        <button class="toggle-compare absolute top-6 right-6 md:right-8 z-10 btn btn-primary btn-sm" data-i18n="btn.viewBefore">View Before</button>
+        <span class="state-badge absolute top-6 left-6 md:left-8 z-10 pill" data-i18n="badge.after">After</span>
         <div class="absolute bottom-6 md:bottom-10 left-6 md:left-8 right-6 md:right-8 max-w-sm md:max-w-lg">
           <div class="flex flex-wrap gap-2 mb-4">
-            <span class="pill">Lawn Restoration</span>
-            <span class="pill">Family Garden</span>
+            <span class="pill" data-i18n="portfolio.c2.tag1">Lawn Restoration</span>
+            <span class="pill" data-i18n="portfolio.c2.tag2">Family Garden</span>
           </div>
           <h3 class="text-3xl md:text-5xl font-light heading-tight">Villa Sierra Blanca</h3>
           <p class="mt-2 text-prana-dim">Sierra Blanca, Marbella · 2023</p>
-          <p class="mt-3 text-sm md:text-base text-prana-dim leading-[1.6] max-w-md">A 600m² family lawn worn down by daily use and disease, restored to even, healthy green in just 10 days.</p>
+          <p class="mt-3 text-sm md:text-base text-prana-dim leading-[1.6] max-w-md" data-i18n="portfolio.c2.desc">A 600m² family lawn worn down by daily use and disease, restored to even, healthy green in just 10 days.</p>
         </div>
     </article>
 
@@ -479,16 +479,16 @@
         <img class="img-before" src="images/case-calahonda-before.jpg" alt="Villa backyard in Calahonda before landscaping — tired patchy natural lawn">
         <img class="img-after" src="images/case-calahonda-after.jpg" alt="Villa backyard in Calahonda after landscaping — premium artificial turf">
         <div class="absolute inset-0 bg-gradient-to-t from-prana-bg/95 via-prana-bg/10 to-transparent pointer-events-none"></div>
-        <button class="toggle-compare absolute top-6 right-6 md:right-8 z-10 btn btn-primary btn-sm">View Before</button>
-        <span class="state-badge absolute top-6 left-6 md:left-8 z-10 pill">After</span>
+        <button class="toggle-compare absolute top-6 right-6 md:right-8 z-10 btn btn-primary btn-sm" data-i18n="btn.viewBefore">View Before</button>
+        <span class="state-badge absolute top-6 left-6 md:left-8 z-10 pill" data-i18n="badge.after">After</span>
         <div class="absolute bottom-6 md:bottom-10 left-6 md:left-8 right-6 md:right-8 max-w-sm md:max-w-lg">
           <div class="flex flex-wrap gap-2 mb-4">
-            <span class="pill">Artificial Turf</span>
-            <span class="pill">Low Maintenance</span>
+            <span class="pill" data-i18n="portfolio.c3.tag1">Artificial Turf</span>
+            <span class="pill" data-i18n="portfolio.c3.tag2">Low Maintenance</span>
           </div>
           <h3 class="text-3xl md:text-5xl font-light heading-tight">Villa Calahonda</h3>
           <p class="mt-2 text-prana-dim">Calahonda · 2023</p>
-          <p class="mt-3 text-sm md:text-base text-prana-dim leading-[1.6] max-w-md">280m² of natural lawn replaced with premium artificial turf — a year-round garden that cut upkeep costs by 40%.</p>
+          <p class="mt-3 text-sm md:text-base text-prana-dim leading-[1.6] max-w-md" data-i18n="portfolio.c3.desc">280m² of natural lawn replaced with premium artificial turf — a year-round garden that cut upkeep costs by 40%.</p>
         </div>
     </article>
 
@@ -497,16 +497,16 @@
         <img class="img-before" src="images/case-mijascosta-before.jpg" alt="Villa garden in Mijas Costa before restoration — overgrown and neglected">
         <img class="img-after" src="images/case-mijascosta-after.jpg" alt="Villa garden in Mijas Costa after restoration — full garden with barbecue area">
         <div class="absolute inset-0 bg-gradient-to-t from-prana-bg/95 via-prana-bg/10 to-transparent pointer-events-none"></div>
-        <button class="toggle-compare absolute top-6 right-6 md:right-8 z-10 btn btn-primary btn-sm">View Before</button>
-        <span class="state-badge absolute top-6 left-6 md:left-8 z-10 pill">After</span>
+        <button class="toggle-compare absolute top-6 right-6 md:right-8 z-10 btn btn-primary btn-sm" data-i18n="btn.viewBefore">View Before</button>
+        <span class="state-badge absolute top-6 left-6 md:left-8 z-10 pill" data-i18n="badge.after">After</span>
         <div class="absolute bottom-6 md:bottom-10 left-6 md:left-8 right-6 md:right-8 max-w-sm md:max-w-lg">
           <div class="flex flex-wrap gap-2 mb-4">
-            <span class="pill">Full Restoration</span>
-            <span class="pill">Garden Revival</span>
+            <span class="pill" data-i18n="portfolio.c4.tag1">Full Restoration</span>
+            <span class="pill" data-i18n="portfolio.c4.tag2">Garden Revival</span>
           </div>
           <h3 class="text-3xl md:text-5xl font-light heading-tight">Villa Mijas Costa</h3>
           <p class="mt-2 text-prana-dim">Mijas Costa · 2024</p>
-          <p class="mt-3 text-sm md:text-base text-prana-dim leading-[1.6] max-w-md">A 700m² garden left untouched for two years, cleared and rebuilt in 6 weeks into one of the street's finest.</p>
+          <p class="mt-3 text-sm md:text-base text-prana-dim leading-[1.6] max-w-md" data-i18n="portfolio.c4.desc">A 700m² garden left untouched for two years, cleared and rebuilt in 6 weeks into one of the street's finest.</p>
         </div>
     </article>
 
@@ -515,16 +515,16 @@
         <img class="img-before" src="images/case-sotogrande-before.jpg" alt="Sotogrande estate grounds before PRANA maintenance — inconsistent upkeep">
         <img class="img-after" src="images/case-sotogrande-after.jpg" alt="Sotogrande estate grounds after PRANA maintenance — impeccable lawn, olive grove and pool">
         <div class="absolute inset-0 bg-gradient-to-t from-prana-bg/95 via-prana-bg/10 to-transparent pointer-events-none"></div>
-        <button class="toggle-compare absolute top-6 right-6 md:right-8 z-10 btn btn-primary btn-sm">View Before</button>
-        <span class="state-badge absolute top-6 left-6 md:left-8 z-10 pill">After</span>
+        <button class="toggle-compare absolute top-6 right-6 md:right-8 z-10 btn btn-primary btn-sm" data-i18n="btn.viewBefore">View Before</button>
+        <span class="state-badge absolute top-6 left-6 md:left-8 z-10 pill" data-i18n="badge.after">After</span>
         <div class="absolute bottom-6 md:bottom-10 left-6 md:left-8 right-6 md:right-8 max-w-sm md:max-w-lg">
           <div class="flex flex-wrap gap-2 mb-4">
-            <span class="pill">Estate Maintenance</span>
+            <span class="pill" data-i18n="portfolio.c5.tag1">Estate Maintenance</span>
             <span class="pill">1,500m²</span>
           </div>
           <h3 class="text-3xl md:text-5xl font-light heading-tight">Residencia Sotogrande</h3>
-          <p class="mt-2 text-prana-dim">Sotogrande · Ongoing</p>
-          <p class="mt-3 text-sm md:text-base text-prana-dim leading-[1.6] max-w-md">Garden, lawn, olive grove and pool, now under one unified annual care plan with a dedicated crew and monthly reporting.</p>
+          <p class="mt-2 text-prana-dim">Sotogrande · <span data-i18n="portfolio.ongoing">Ongoing</span></p>
+          <p class="mt-3 text-sm md:text-base text-prana-dim leading-[1.6] max-w-md" data-i18n="portfolio.c5.desc">Garden, lawn, olive grove and pool, now under one unified annual care plan with a dedicated crew and monthly reporting.</p>
         </div>
     </article>
 
@@ -533,7 +533,7 @@
 
 <!-- cursor-following "view case" badge -->
 <div id="caseFollow" class="case-follow">
-  <span>View Case</span>
+  <span data-i18n="btn.viewCase">View Case</span>
   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
 </div>
 
@@ -552,14 +552,14 @@
       <h3 id="caseModalTitle" class="text-2xl md:text-3xl font-light heading-tight"></h3>
       <p id="caseModalLocation" class="mt-1 text-prana-faint"></p>
 
-      <p class="eyebrow mt-8">The Challenge</p>
+      <p class="eyebrow mt-8" data-i18n="modal.challenge">The Challenge</p>
       <p id="caseModalChallenge" class="mt-3 text-prana-dim leading-[1.7]"></p>
 
-      <p class="eyebrow mt-8">What We Did</p>
+      <p class="eyebrow mt-8" data-i18n="modal.whatWeDid">What We Did</p>
       <ul id="caseModalSteps" class="mt-3 space-y-3 text-prana-dim"></ul>
 
       <div class="mt-8 rounded-xl border border-prana-gold/30 bg-prana-gold/[0.06] p-6">
-        <p class="eyebrow">The Result</p>
+        <p class="eyebrow" data-i18n="modal.result">The Result</p>
         <p id="caseModalResult" class="mt-3 text-prana-ink leading-[1.7]"></p>
       </div>
     </div>
@@ -569,8 +569,8 @@
 <!-- ============ SERVICES ============ -->
 <section id="services" class="relative py-28 md:py-36">
   <div class="max-w-[1400px] mx-auto px-6 md:px-10">
-    <p class="reveal eyebrow mb-5">What We Do</p>
-    <h2 class="reveal reveal-d1 heading-tight text-3xl md:text-[2.75rem] font-light max-w-xl">Four disciplines, one studio</h2>
+    <p class="reveal eyebrow mb-5" data-i18n="services.eyebrow">What We Do</p>
+    <h2 class="reveal reveal-d1 heading-tight text-3xl md:text-[2.75rem] font-light max-w-xl" data-i18n="services.h2">Four disciplines, one studio</h2>
   </div>
 
   <div class="mt-16 md:mt-20 divide-y divide-white/[0.07] border-t border-white/[0.07]">
@@ -579,8 +579,8 @@
     <div class="max-w-[1400px] mx-auto px-6 md:px-10 py-14 md:py-16 grid md:grid-cols-2 gap-10 items-center">
       <div class="reveal order-2 md:order-1">
         <span class="num">01</span>
-        <h3 class="mt-3 text-2xl md:text-3xl font-light heading-tight">Landscape design</h3>
-        <p class="mt-4 text-prana-dim leading-[1.75] max-w-md">Masterplans that read the site first — sun path, slope, sea wind — then draw a garden that will still feel right in fifteen years, not fifteen months.</p>
+        <h3 class="mt-3 text-2xl md:text-3xl font-light heading-tight" data-i18n="services.1.title">Landscape design</h3>
+        <p class="mt-4 text-prana-dim leading-[1.75] max-w-md" data-i18n="services.1.desc">Masterplans that read the site first — sun path, slope, sea wind — then draw a garden that will still feel right in fifteen years, not fifteen months.</p>
       </div>
       <div class="reveal reveal-d1 order-1 md:order-2 img-zoom rounded-2xl overflow-hidden aspect-[4/3] border border-white/10">
         <img src="images/services-design.jpg" alt="Newly completed contemporary landscape design at a villa in Benahavís" class="w-full h-full object-cover">
@@ -594,8 +594,8 @@
       </div>
       <div class="reveal reveal-d1">
         <span class="num">02</span>
-        <h3 class="mt-3 text-2xl md:text-3xl font-light heading-tight">Planting &amp; soft landscaping</h3>
-        <p class="mt-4 text-prana-dim leading-[1.75] max-w-md">Mediterranean and native Andalusian species selected for structure and scent as much as survival — olive, cypress, lavender and rosemary, planted to thrive without babying.</p>
+        <h3 class="mt-3 text-2xl md:text-3xl font-light heading-tight" data-i18n="services.2.title">Planting &amp; soft landscaping</h3>
+        <p class="mt-4 text-prana-dim leading-[1.75] max-w-md" data-i18n="services.2.desc">Mediterranean and native Andalusian species selected for structure and scent as much as survival — olive, cypress, lavender and rosemary, planted to thrive without babying.</p>
       </div>
     </div>
 
@@ -603,9 +603,9 @@
     <div class="max-w-[1400px] mx-auto px-6 md:px-10 py-14 md:py-16 grid md:grid-cols-2 gap-10 items-center">
       <div class="reveal order-2 md:order-1">
         <span class="num">03</span>
-        <h3 class="mt-3 text-2xl md:text-3xl font-light heading-tight">Lawns &amp; irrigation</h3>
-        <p class="mt-4 text-prana-dim leading-[1.75] max-w-md">Our founding specialism. Turf selection, drainage and smart watering engineered specifically for the Costa del Sol's long, dry summers — see the section below.</p>
-        <a href="#lawns" class="inline-flex mt-5 text-sm text-prana-gold hover:text-prana-gold-bright transition-colors duration-300">Explore our lawn expertise →</a>
+        <h3 class="mt-3 text-2xl md:text-3xl font-light heading-tight" data-i18n="services.3.title">Lawns &amp; irrigation</h3>
+        <p class="mt-4 text-prana-dim leading-[1.75] max-w-md" data-i18n="services.3.desc">Our founding specialism. Turf selection, drainage and smart watering engineered specifically for the Costa del Sol's long, dry summers — see the section below.</p>
+        <a href="#lawns" class="inline-flex mt-5 text-sm text-prana-gold hover:text-prana-gold-bright transition-colors duration-300" data-i18n="services.lawnLink">Explore our lawn expertise →</a>
       </div>
       <div class="reveal reveal-d1 order-1 md:order-2 img-zoom rounded-2xl overflow-hidden aspect-[4/3] border border-white/10">
         <img src="images/services-irrigation.jpg" alt="Automatic sprinkler irrigating a lush green lawn" class="w-full h-full object-cover">
@@ -619,8 +619,8 @@
       </div>
       <div class="reveal reveal-d1">
         <span class="num">04</span>
-        <h3 class="mt-3 text-2xl md:text-3xl font-light heading-tight">Pools &amp; water features</h3>
-        <p class="mt-4 text-prana-dim leading-[1.75] max-w-md">Infinity edges, natural stone waterfalls and reflecting pools, integrated into the planting plan rather than dropped onto it.</p>
+        <h3 class="mt-3 text-2xl md:text-3xl font-light heading-tight" data-i18n="services.4.title">Pools &amp; water features</h3>
+        <p class="mt-4 text-prana-dim leading-[1.75] max-w-md" data-i18n="services.4.desc">Infinity edges, natural stone waterfalls and reflecting pools, integrated into the planting plan rather than dropped onto it.</p>
       </div>
     </div>
 
@@ -631,9 +631,9 @@
 <section id="lawns" class="relative py-28 md:py-36 bg-prana-elevated/60 border-y border-white/[0.07]">
   <div class="max-w-[1400px] mx-auto px-6 md:px-10">
     <div class="max-w-2xl">
-      <p class="reveal eyebrow mb-5">Our Specialism</p>
-      <h2 class="reveal reveal-d1 heading-tight text-3xl md:text-[2.75rem] font-light">Lawns, engineered for Andalusian summers</h2>
-      <p class="reveal reveal-d2 mt-6 text-prana-dim leading-[1.75] text-[15px] md:text-base">Lawns are where PRANA began, and where our engineering runs deepest. Every lawn we lay is chosen, drained and irrigated for the specific microclimate of your plot — not a catalogue default.</p>
+      <p class="reveal eyebrow mb-5" data-i18n="lawns.eyebrow">Our Specialism</p>
+      <h2 class="reveal reveal-d1 heading-tight text-3xl md:text-[2.75rem] font-light" data-i18n="lawns.h2">Lawns, engineered for Andalusian summers</h2>
+      <p class="reveal reveal-d2 mt-6 text-prana-dim leading-[1.75] text-[15px] md:text-base" data-i18n="lawns.intro">Lawns are where PRANA began, and where our engineering runs deepest. Every lawn we lay is chosen, drained and irrigated for the specific microclimate of your plot — not a catalogue default.</p>
     </div>
 
     <div class="mt-16 grid md:grid-cols-3 gap-8">
@@ -644,8 +644,8 @@
         </div>
         <div class="p-7">
           <span class="num">01</span>
-          <h3 class="mt-3 text-lg font-light heading-tight">Natural &amp; artificial turf</h3>
-          <p class="mt-3 text-sm text-prana-dim leading-[1.7]">Drought-resistant warm-season varieties — Bermuda, Zoysia, Paspalum — for full sun, and premium artificial turf for shaded terraces, rooftops and heavy-shade courtyards.</p>
+          <h3 class="mt-3 text-lg font-light heading-tight" data-i18n="lawns.1.title">Natural &amp; artificial turf</h3>
+          <p class="mt-3 text-sm text-prana-dim leading-[1.7]" data-i18n="lawns.1.desc">Drought-resistant warm-season varieties — Bermuda, Zoysia, Paspalum — for full sun, and premium artificial turf for shaded terraces, rooftops and heavy-shade courtyards.</p>
         </div>
       </div>
 
@@ -655,8 +655,8 @@
         </div>
         <div class="p-7">
           <span class="num">02</span>
-          <h3 class="mt-3 text-lg font-light heading-tight">Smart irrigation &amp; water conservation</h3>
-          <p class="mt-3 text-sm text-prana-dim leading-[1.7]">Weather-linked automatic systems, drip lines for beds, and soil-moisture sensors that cut water use — designed within current Junta de Andalucía restrictions.</p>
+          <h3 class="mt-3 text-lg font-light heading-tight" data-i18n="lawns.2.title">Smart irrigation &amp; water conservation</h3>
+          <p class="mt-3 text-sm text-prana-dim leading-[1.7]" data-i18n="lawns.2.desc">Weather-linked automatic systems, drip lines for beds, and soil-moisture sensors that cut water use — designed within current Junta de Andalucía restrictions.</p>
         </div>
       </div>
 
@@ -666,8 +666,8 @@
         </div>
         <div class="p-7">
           <span class="num">03</span>
-          <h3 class="mt-3 text-lg font-light heading-tight">Seasonal maintenance</h3>
-          <p class="mt-3 text-sm text-prana-dim leading-[1.7]">Scheduled mowing, core aeration, overseeding and a two-stage fertilisation programme timed to the Mediterranean growing calendar, not a generic quarter.</p>
+          <h3 class="mt-3 text-lg font-light heading-tight" data-i18n="lawns.3.title">Seasonal maintenance</h3>
+          <p class="mt-3 text-sm text-prana-dim leading-[1.7]" data-i18n="lawns.3.desc">Scheduled mowing, core aeration, overseeding and a two-stage fertilisation programme timed to the Mediterranean growing calendar, not a generic quarter.</p>
         </div>
       </div>
 
@@ -678,11 +678,11 @@
 <!-- ============ QUOTE STRIP ============ -->
 <section class="relative py-24 md:py-32 grid-texture">
   <div class="max-w-3xl mx-auto px-6 text-center">
-    <p class="reveal eyebrow mb-6 justify-center flex">The PRANA Standard</p>
-    <p class="reveal reveal-d1 accent text-3xl md:text-5xl leading-[1.3] text-prana-ink">
+    <p class="reveal eyebrow mb-6 justify-center flex" data-i18n="quote.eyebrow">The PRANA Standard</p>
+    <p class="reveal reveal-d1 accent text-3xl md:text-5xl leading-[1.3] text-prana-ink" data-i18n="quote.text">
       "A garden is the one part of a home that keeps changing. Ours are built to change well — into shade, into maturity, into thirty more Augusts."
     </p>
-    <p class="reveal reveal-d2 mt-6 text-sm text-prana-faint tracking-wide">Diego Ferrer, Founder &amp; Landscape Architect</p>
+    <p class="reveal reveal-d2 mt-6 text-sm text-prana-faint tracking-wide">Diego Ferrer, <span data-i18n="quote.role">Founder &amp; Landscape Architect</span></p>
   </div>
 </section>
 
@@ -690,8 +690,8 @@
 <section id="packages" class="relative py-28 md:py-36">
   <div class="max-w-[1400px] mx-auto px-6 md:px-10">
     <div class="max-w-xl mb-16">
-      <p class="reveal eyebrow mb-5">Service Packages</p>
-      <h2 class="reveal reveal-d1 heading-tight text-3xl md:text-[2.75rem] font-light">Ongoing care, tailored to your estate</h2>
+      <p class="reveal eyebrow mb-5" data-i18n="packages.eyebrow">Service Packages</p>
+      <h2 class="reveal reveal-d1 heading-tight text-3xl md:text-[2.75rem] font-light" data-i18n="packages.h2">Ongoing care, tailored to your estate</h2>
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
@@ -701,39 +701,39 @@
         <div class="w-11 h-11 rounded-full bg-prana-gold/12 border border-prana-gold/30 flex items-center justify-center">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="1.6"><path d="M5 21c8 0 14-6 14-15-9 0-15 6-15 15Z"/><path d="M5 21c2-6 6-10 12-13"/></svg>
         </div>
-        <h3 class="mt-5 text-xl font-light heading-tight">Essential Care</h3>
-        <p class="mt-2 text-sm text-prana-faint">For low-maintenance gardens and lock-up-and-leave villas</p>
-        <div class="mt-7 text-3xl font-light heading-tight">€180<span class="text-base font-normal text-prana-faint">/month</span></div>
+        <h3 class="mt-5 text-xl font-light heading-tight" data-i18n="packages.essential.title">Essential Care</h3>
+        <p class="mt-2 text-sm text-prana-faint" data-i18n="packages.essential.subtitle">For low-maintenance gardens and lock-up-and-leave villas</p>
+        <div class="mt-7 text-3xl font-light heading-tight">€180<span class="text-base font-normal text-prana-faint" data-i18n="packages.perMonth">/month</span></div>
         <ul class="mt-8 grid grid-cols-2 gap-x-5 gap-y-4 text-sm text-prana-dim flex-1">
-          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Weekly mowing &amp; edging</li>
-          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Seasonal pruning</li>
-          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Irrigation checks</li>
-          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Fertilisation, 2x/year</li>
+          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span data-i18n="packages.essential.f1">Weekly mowing &amp; edging</span></li>
+          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span data-i18n="packages.essential.f2">Seasonal pruning</span></li>
+          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span data-i18n="packages.essential.f3">Irrigation checks</span></li>
+          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span data-i18n="packages.essential.f4">Fertilisation, 2x/year</span></li>
         </ul>
         <a href="#contact" class="btn-pill mt-9">
-          <span>Enquire</span>
+          <span data-i18n="btn.enquire">Enquire</span>
           <span class="btn-pill-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
         </a>
       </div>
 
       <!-- Signature -->
       <div class="reveal reveal-d1 card-lift relative rounded-2xl border border-prana-gold/50 bg-gradient-to-b from-prana-gold/[0.07] to-prana-floating/60 p-8 md:p-9 flex flex-col md:-translate-y-3">
-        <span class="absolute -top-3 left-8 pill border-prana-gold/50 text-prana-gold bg-prana-elevated">Most Popular</span>
+        <span class="absolute -top-3 left-8 pill border-prana-gold/50 text-prana-gold bg-prana-elevated" data-i18n="badge.mostPopular">Most Popular</span>
         <div class="w-11 h-11 rounded-full bg-prana-gold flex items-center justify-center">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0a130d" stroke-width="1.8"><path d="M12 2c2 4-1 5-1 8a3 3 0 0 0 6 0c1 2 1 4 0 6a7 7 0 0 1-14 0c-1-4 2-6 3-9 .5 1.5 1.5 2 2 1s-1-3 0-6Z"/></svg>
         </div>
-        <h3 class="mt-5 text-xl font-light heading-tight">Signature Care</h3>
-        <p class="mt-2 text-sm text-prana-faint">Our most-chosen plan for full private villas</p>
-        <div class="mt-7 text-3xl font-light heading-tight">€340<span class="text-base font-normal text-prana-faint">/month</span></div>
+        <h3 class="mt-5 text-xl font-light heading-tight" data-i18n="packages.signature.title">Signature Care</h3>
+        <p class="mt-2 text-sm text-prana-faint" data-i18n="packages.signature.subtitle">Our most-chosen plan for full private villas</p>
+        <div class="mt-7 text-3xl font-light heading-tight">€340<span class="text-base font-normal text-prana-faint" data-i18n="packages.perMonth">/month</span></div>
         <ul class="mt-8 grid grid-cols-2 gap-x-5 gap-y-4 text-sm text-prana-dim flex-1">
-          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Everything in Essential</li>
-          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Twice-weekly in peak season</li>
-          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Full drip &amp; irrigation mgmt.</li>
-          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Pest &amp; disease monitoring</li>
-          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Seasonal planting refresh</li>
+          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span data-i18n="packages.signature.f1">Everything in Essential</span></li>
+          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span data-i18n="packages.signature.f2">Twice-weekly in peak season</span></li>
+          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span data-i18n="packages.signature.f3">Full drip &amp; irrigation mgmt.</span></li>
+          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span data-i18n="packages.signature.f4">Pest &amp; disease monitoring</span></li>
+          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span data-i18n="packages.signature.f5">Seasonal planting refresh</span></li>
         </ul>
         <a href="#contact" class="btn-pill btn-pill-solid mt-9">
-          <span>Enquire</span>
+          <span data-i18n="btn.enquire">Enquire</span>
           <span class="btn-pill-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
         </a>
       </div>
@@ -743,18 +743,18 @@
         <div class="w-11 h-11 rounded-full bg-prana-gold/12 border border-prana-gold/30 flex items-center justify-center">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="1.6"><path d="M12 3 4 7v5c0 5 3.5 7.5 8 9 4.5-1.5 8-4 8-9V7l-8-4Z"/></svg>
         </div>
-        <h3 class="mt-5 text-xl font-light heading-tight">Estate Care</h3>
-        <p class="mt-2 text-sm text-prana-faint">Dedicated, on-site grounds management</p>
-        <div class="mt-7 text-3xl font-light heading-tight">Bespoke</div>
+        <h3 class="mt-5 text-xl font-light heading-tight" data-i18n="packages.estate.title">Estate Care</h3>
+        <p class="mt-2 text-sm text-prana-faint" data-i18n="packages.estate.subtitle">Dedicated, on-site grounds management</p>
+        <div class="mt-7 text-3xl font-light heading-tight" data-i18n="packages.bespoke">Bespoke</div>
         <ul class="mt-8 grid grid-cols-2 gap-x-5 gap-y-4 text-sm text-prana-dim flex-1">
-          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Everything in Signature</li>
-          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Dedicated on-site gardener</li>
-          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Pool &amp; water coordination</li>
-          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>Quarterly design review</li>
-          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>24/7 priority support</li>
+          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span data-i18n="packages.estate.f1">Everything in Signature</span></li>
+          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span data-i18n="packages.estate.f2">Dedicated on-site gardener</span></li>
+          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span data-i18n="packages.estate.f3">Pool &amp; water coordination</span></li>
+          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span data-i18n="packages.estate.f4">Quarterly design review</span></li>
+          <li class="flex gap-2.5"><svg class="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg><span data-i18n="packages.estate.f5">24/7 priority support</span></li>
         </ul>
         <a href="#contact" class="btn-pill mt-9">
-          <span>Enquire</span>
+          <span data-i18n="btn.enquire">Enquire</span>
           <span class="btn-pill-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
         </a>
       </div>
@@ -767,8 +767,8 @@
 <section id="team" class="relative py-28 md:py-36 bg-prana-elevated/40 border-y border-white/[0.07]">
   <div class="max-w-[1400px] mx-auto px-6 md:px-10">
     <div class="max-w-xl mb-16">
-      <p class="reveal eyebrow mb-5">The Studio</p>
-      <h2 class="reveal reveal-d1 heading-tight text-3xl md:text-[2.75rem] font-light">Meet the team behind every garden</h2>
+      <p class="reveal eyebrow mb-5" data-i18n="team.eyebrow">The Studio</p>
+      <h2 class="reveal reveal-d1 heading-tight text-3xl md:text-[2.75rem] font-light" data-i18n="team.h2">Meet the team behind every garden</h2>
     </div>
 
     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -777,28 +777,28 @@
           <img src="images/team-architect.jpg" alt="Diego Ferrer, Founder and Landscape Architect at PRANA" class="w-full h-full object-cover">
         </div>
         <h3 class="mt-5 text-lg font-light heading-tight">Diego Ferrer</h3>
-        <p class="text-sm text-prana-gold mt-0.5">Founder &amp; Landscape Architect</p>
+        <p class="text-sm text-prana-gold mt-0.5" data-i18n="team.role.founder">Founder &amp; Landscape Architect</p>
       </div>
       <div class="reveal reveal-d1">
         <div class="img-zoom rounded-2xl overflow-hidden aspect-[3/4] border border-white/10">
           <img src="images/team-designer.jpg" alt="Elena Vidal, Garden Designer at PRANA" class="w-full h-full object-cover">
         </div>
         <h3 class="mt-5 text-lg font-light heading-tight">Elena Vidal</h3>
-        <p class="text-sm text-prana-gold mt-0.5">Garden Designer</p>
+        <p class="text-sm text-prana-gold mt-0.5" data-i18n="team.role.designer">Garden Designer</p>
       </div>
       <div class="reveal reveal-d2">
         <div class="img-zoom rounded-2xl overflow-hidden aspect-[3/4] border border-white/10">
           <img src="images/team-irrigation.jpg" alt="Marco Ruiz, Irrigation Engineer at PRANA" class="w-full h-full object-cover">
         </div>
         <h3 class="mt-5 text-lg font-light heading-tight">Marco Ruiz</h3>
-        <p class="text-sm text-prana-gold mt-0.5">Irrigation Engineer</p>
+        <p class="text-sm text-prana-gold mt-0.5" data-i18n="team.role.irrigation">Irrigation Engineer</p>
       </div>
       <div class="reveal reveal-d3">
         <div class="img-zoom rounded-2xl overflow-hidden aspect-[3/4] border border-white/10">
           <img src="images/team-gardener.jpg" alt="Antonio Salas, Head Gardener at PRANA" class="w-full h-full object-cover">
         </div>
         <h3 class="mt-5 text-lg font-light heading-tight">Antonio Salas</h3>
-        <p class="text-sm text-prana-gold mt-0.5">Head Gardener</p>
+        <p class="text-sm text-prana-gold mt-0.5" data-i18n="team.role.gardener">Head Gardener</p>
       </div>
     </div>
   </div>
@@ -810,11 +810,11 @@
     <div class="grid md:grid-cols-2 gap-14 md:gap-20 items-start">
 
       <div class="md:sticky md:top-28">
-        <p class="reveal eyebrow mb-5">FAQ</p>
-        <h2 class="reveal reveal-d1 heading-tight text-3xl md:text-[2.75rem] md:leading-[1.15] font-light max-w-md">Frequently <span class="accent">Asked Questions</span></h2>
-        <p class="reveal reveal-d2 mt-6 text-prana-dim leading-[1.7] max-w-sm">Can't find the answer you're looking for? Our team is happy to walk you through timelines, terrain and everything in between.</p>
+        <p class="reveal eyebrow mb-5" data-i18n="faq.eyebrow">FAQ</p>
+        <h2 class="reveal reveal-d1 heading-tight text-3xl md:text-[2.75rem] md:leading-[1.15] font-light max-w-md" data-i18n-html="faq.h2">Frequently <span class="accent">Asked Questions</span></h2>
+        <p class="reveal reveal-d2 mt-6 text-prana-dim leading-[1.7] max-w-sm" data-i18n="faq.intro">Can't find the answer you're looking for? Our team is happy to walk you through timelines, terrain and everything in between.</p>
         <a href="#contact" class="reveal reveal-d3 inline-flex mt-8 btn btn-primary">
-          <span>Contact us</span>
+          <span data-i18n="btn.contactUs">Contact us</span>
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
         </a>
       </div>
@@ -823,61 +823,61 @@
 
         <div class="acc-item reveal rounded-2xl bg-prana-floating/40 border border-white/10">
           <button class="acc-trigger w-full flex items-center justify-between gap-6 px-6 py-5 md:px-7 md:py-6 text-left">
-            <span class="text-base md:text-lg font-medium heading-tight">How long does a full garden transformation take?</span>
+            <span class="text-base md:text-lg font-medium heading-tight" data-i18n="faq.q1">How long does a full garden transformation take?</span>
             <svg class="acc-chevron shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
           </button>
           <div class="acc-panel">
-            <p class="px-6 md:px-7 pb-6 text-prana-dim leading-[1.75]">Most residential projects run 6–12 weeks from groundworks to planting, depending on scale and hardscaping. We agree a fixed timeline with you before any work begins.</p>
+            <p class="px-6 md:px-7 pb-6 text-prana-dim leading-[1.75]" data-i18n="faq.a1">Most residential projects run 6–12 weeks from groundworks to planting, depending on scale and hardscaping. We agree a fixed timeline with you before any work begins.</p>
           </div>
         </div>
 
         <div class="acc-item reveal reveal-d1 rounded-2xl bg-prana-floating/40 border border-white/10">
           <button class="acc-trigger w-full flex items-center justify-between gap-6 px-6 py-5 md:px-7 md:py-6 text-left">
-            <span class="text-base md:text-lg font-medium heading-tight">Can you work with sloped or difficult terrain?</span>
+            <span class="text-base md:text-lg font-medium heading-tight" data-i18n="faq.q2">Can you work with sloped or difficult terrain?</span>
             <svg class="acc-chevron shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
           </button>
           <div class="acc-panel">
-            <p class="px-6 md:px-7 pb-6 text-prana-dim leading-[1.75]">Yes — much of the Costa del Sol is terraced hillside. We regularly engineer retaining walls, drainage and stepped planting for gradients that other contractors turn away.</p>
+            <p class="px-6 md:px-7 pb-6 text-prana-dim leading-[1.75]" data-i18n="faq.a2">Yes — much of the Costa del Sol is terraced hillside. We regularly engineer retaining walls, drainage and stepped planting for gradients that other contractors turn away.</p>
           </div>
         </div>
 
         <div class="acc-item reveal reveal-d2 rounded-2xl bg-prana-floating/40 border border-white/10">
           <button class="acc-trigger w-full flex items-center justify-between gap-6 px-6 py-5 md:px-7 md:py-6 text-left">
-            <span class="text-base md:text-lg font-medium heading-tight">Which lawn type suits the Andalusian climate best?</span>
+            <span class="text-base md:text-lg font-medium heading-tight" data-i18n="faq.q3">Which lawn type suits the Andalusian climate best?</span>
             <svg class="acc-chevron shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
           </button>
           <div class="acc-panel">
-            <p class="px-6 md:px-7 pb-6 text-prana-dim leading-[1.75]">For most gardens we recommend drought-resistant warm-season varieties such as Bermuda or Zoysia, paired with smart irrigation. Artificial turf is popular on shaded terraces and rooftops where natural grass struggles.</p>
+            <p class="px-6 md:px-7 pb-6 text-prana-dim leading-[1.75]" data-i18n="faq.a3">For most gardens we recommend drought-resistant warm-season varieties such as Bermuda or Zoysia, paired with smart irrigation. Artificial turf is popular on shaded terraces and rooftops where natural grass struggles.</p>
           </div>
         </div>
 
         <div class="acc-item reveal reveal-d3 rounded-2xl bg-prana-floating/40 border border-white/10">
           <button class="acc-trigger w-full flex items-center justify-between gap-6 px-6 py-5 md:px-7 md:py-6 text-left">
-            <span class="text-base md:text-lg font-medium heading-tight">Do you handle irrigation permits and water restrictions?</span>
+            <span class="text-base md:text-lg font-medium heading-tight" data-i18n="faq.q4">Do you handle irrigation permits and water restrictions?</span>
             <svg class="acc-chevron shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
           </button>
           <div class="acc-panel">
-            <p class="px-6 md:px-7 pb-6 text-prana-dim leading-[1.75]">We design every irrigation system to comply with current Junta de Andalucía water-use restrictions, and handle any required community or municipal permits on your behalf.</p>
+            <p class="px-6 md:px-7 pb-6 text-prana-dim leading-[1.75]" data-i18n="faq.a4">We design every irrigation system to comply with current Junta de Andalucía water-use restrictions, and handle any required community or municipal permits on your behalf.</p>
           </div>
         </div>
 
         <div class="acc-item reveal rounded-2xl bg-prana-floating/40 border border-white/10">
           <button class="acc-trigger w-full flex items-center justify-between gap-6 px-6 py-5 md:px-7 md:py-6 text-left">
-            <span class="text-base md:text-lg font-medium heading-tight">Is ongoing maintenance included?</span>
+            <span class="text-base md:text-lg font-medium heading-tight" data-i18n="faq.q5">Is ongoing maintenance included?</span>
             <svg class="acc-chevron shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
           </button>
           <div class="acc-panel">
-            <p class="px-6 md:px-7 pb-6 text-prana-dim leading-[1.75]">Design-and-build projects include a 12-month maintenance period. Beyond that, our Essential, Signature and Estate packages cover mowing, feeding, pruning and irrigation checks year-round.</p>
+            <p class="px-6 md:px-7 pb-6 text-prana-dim leading-[1.75]" data-i18n="faq.a5">Design-and-build projects include a 12-month maintenance period. Beyond that, our Essential, Signature and Estate packages cover mowing, feeding, pruning and irrigation checks year-round.</p>
           </div>
         </div>
 
         <div class="acc-item reveal reveal-d1 rounded-2xl bg-prana-floating/40 border border-white/10">
           <button class="acc-trigger w-full flex items-center justify-between gap-6 px-6 py-5 md:px-7 md:py-6 text-left">
-            <span class="text-base md:text-lg font-medium heading-tight">What languages does your team speak on site?</span>
+            <span class="text-base md:text-lg font-medium heading-tight" data-i18n="faq.q6">What languages does your team speak on site?</span>
             <svg class="acc-chevron shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="1.6"><path d="M12 5v14M5 12h14"/></svg>
           </button>
           <div class="acc-panel">
-            <p class="px-6 md:px-7 pb-6 text-prana-dim leading-[1.75]">Our project managers and crews work comfortably in English, Spanish and Russian, so you're never without clear communication.</p>
+            <p class="px-6 md:px-7 pb-6 text-prana-dim leading-[1.75]" data-i18n="faq.a6">Our project managers and crews work comfortably in English, Spanish and Russian, so you're never without clear communication.</p>
           </div>
         </div>
 
@@ -890,9 +890,9 @@
 <section id="contact" class="relative py-28 md:py-36 bg-prana-elevated/60 border-t border-white/[0.07]">
   <div class="max-w-[1400px] mx-auto px-6 md:px-10">
     <div class="max-w-xl mb-16">
-      <p class="reveal eyebrow mb-5">Get In Touch</p>
-      <h2 class="reveal reveal-d1 heading-tight text-3xl md:text-[2.75rem] font-light">Let's design your garden</h2>
-      <p class="reveal reveal-d2 mt-5 text-prana-dim leading-[1.7]">Tell us about your property and we'll arrange a site visit within a week.</p>
+      <p class="reveal eyebrow mb-5" data-i18n="contact.eyebrow">Get In Touch</p>
+      <h2 class="reveal reveal-d1 heading-tight text-3xl md:text-[2.75rem] font-light" data-i18n="contact.h2">Let's design your garden</h2>
+      <p class="reveal reveal-d2 mt-5 text-prana-dim leading-[1.7]" data-i18n="contact.intro">Tell us about your property and we'll arrange a site visit within a week.</p>
     </div>
 
     <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
@@ -903,28 +903,28 @@
           <div class="flex gap-4">
             <svg class="shrink-0 mt-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="1.6"><path d="M3 5c0 9 7 16 16 16l3-4-6-3-2 2c-2-1-5-4-6-6l2-2-3-6z"/></svg>
             <div>
-              <div class="text-sm text-prana-faint">Phone &amp; WhatsApp</div>
+              <div class="text-sm text-prana-faint" data-i18n="contact.phoneLabel">Phone &amp; WhatsApp</div>
               <a href="tel:+34951234567" class="block mt-1 hover:text-prana-gold transition-colors duration-300">+34 951 234 567</a>
             </div>
           </div>
           <div class="flex gap-4">
             <svg class="shrink-0 mt-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
             <div>
-              <div class="text-sm text-prana-faint">Email</div>
+              <div class="text-sm text-prana-faint" data-i18n="contact.emailLabel">Email</div>
               <a href="mailto:hello@prana.es" class="block mt-1 hover:text-prana-gold transition-colors duration-300">hello@prana.es</a>
             </div>
           </div>
           <div class="flex gap-4">
             <svg class="shrink-0 mt-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="1.6"><path d="M12 22s7-6.3 7-12a7 7 0 1 0-14 0c0 5.7 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>
             <div>
-              <div class="text-sm text-prana-faint">Studio &amp; Showroom</div>
+              <div class="text-sm text-prana-faint" data-i18n="contact.studioLabel">Studio &amp; Showroom</div>
               <p class="mt-1 text-prana-ink">Avenida Ricardo Soriano 72<br>29601 Marbella, Málaga, Spain</p>
             </div>
           </div>
           <div class="flex gap-4">
             <svg class="shrink-0 mt-1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 4 6 4 9s-1.5 6.3-4 9c-2.5-2.7-4-6-4-9s1.5-6.3 4-9Z"/></svg>
             <div>
-              <div class="text-sm text-prana-faint">Languages spoken</div>
+              <div class="text-sm text-prana-faint" data-i18n="contact.languagesLabel">Languages spoken</div>
               <p class="mt-1 text-prana-ink">English · Español · Русский</p>
             </div>
           </div>
@@ -936,34 +936,34 @@
       <form class="lg:col-span-3 reveal reveal-d1" id="enquiryForm">
         <div class="grid sm:grid-cols-2 gap-5">
           <div>
-            <label class="block text-sm text-prana-faint mb-2" for="fname">Full name</label>
+            <label class="block text-sm text-prana-faint mb-2" for="fname" data-i18n="form.fullName">Full name</label>
             <input id="fname" name="name" type="text" required class="w-full rounded-lg px-4 py-3 text-sm">
           </div>
           <div>
-            <label class="block text-sm text-prana-faint mb-2" for="fphone">Phone / WhatsApp</label>
+            <label class="block text-sm text-prana-faint mb-2" for="fphone" data-i18n="form.phone">Phone / WhatsApp</label>
             <input id="fphone" name="phone" type="tel" required class="w-full rounded-lg px-4 py-3 text-sm">
           </div>
         </div>
         <div class="mt-5">
-          <label class="block text-sm text-prana-faint mb-2" for="femail">Email</label>
+          <label class="block text-sm text-prana-faint mb-2" for="femail" data-i18n="form.email">Email</label>
           <input id="femail" name="email" type="email" required class="w-full rounded-lg px-4 py-3 text-sm">
         </div>
         <div class="mt-5">
-          <label class="block text-sm text-prana-faint mb-2" for="fservice">What do you need?</label>
+          <label class="block text-sm text-prana-faint mb-2" for="fservice" data-i18n="form.whatDoYouNeed">What do you need?</label>
           <select id="fservice" name="service" class="w-full rounded-lg pl-4 pr-11 py-3 text-sm">
-            <option>Full garden design &amp; build</option>
-            <option>Lawn installation or renovation</option>
-            <option>Irrigation system</option>
-            <option>Ongoing maintenance package</option>
-            <option>Something else</option>
+            <option data-i18n="form.opt1">Full garden design &amp; build</option>
+            <option data-i18n="form.opt2">Lawn installation or renovation</option>
+            <option data-i18n="form.opt3">Irrigation system</option>
+            <option data-i18n="form.opt4">Ongoing maintenance package</option>
+            <option data-i18n="form.opt5">Something else</option>
           </select>
         </div>
         <div class="mt-5">
-          <label class="block text-sm text-prana-faint mb-2" for="fmessage">Tell us about your property</label>
-          <textarea id="fmessage" name="message" rows="4" class="w-full rounded-lg px-4 py-3 text-sm resize-none" placeholder="Location, approximate size, and what you have in mind..."></textarea>
+          <label class="block text-sm text-prana-faint mb-2" for="fmessage" data-i18n="form.tellUs">Tell us about your property</label>
+          <textarea id="fmessage" name="message" rows="4" class="w-full rounded-lg px-4 py-3 text-sm resize-none" data-i18n-placeholder="form.placeholder" placeholder="Location, approximate size, and what you have in mind..."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary mt-7 w-full sm:w-auto">Submit Enquiry</button>
-        <p id="formNote" class="mt-4 text-sm text-prana-gold hidden">Thank you — we'll be in touch within one business day.</p>
+        <button type="submit" class="btn btn-primary mt-7 w-full sm:w-auto" data-i18n="btn.submitEnquiryForm">Submit Enquiry</button>
+        <p id="formNote" class="mt-4 text-sm text-prana-gold hidden" data-i18n="form.thankYou">Thank you — we'll be in touch within one business day.</p>
       </form>
 
     </div>
@@ -998,10 +998,10 @@
     </div>
 
     <div class="mt-10 pt-8 border-t border-white/[0.07] flex flex-col md:flex-row gap-4 md:items-center md:justify-between text-xs text-prana-faint">
-      <p>© <span id="year"></span> PRANA Landscape Studio S.L. · CIF B-93847261 · All rights reserved.</p>
+      <p>© <span id="year"></span> PRANA Landscape Studio S.L. · CIF B-93847261 · <span data-i18n="footer.rights">All rights reserved.</span></p>
       <div class="flex items-center gap-6">
-        <a href="#" class="hover:text-prana-dim transition-colors duration-300">Privacy Policy</a>
-        <a href="#" class="hover:text-prana-dim transition-colors duration-300">Terms of Service</a>
+        <a href="#" class="hover:text-prana-dim transition-colors duration-300" data-i18n="footer.privacy">Privacy Policy</a>
+        <a href="#" class="hover:text-prana-dim transition-colors duration-300" data-i18n="footer.terms">Terms of Service</a>
       </div>
     </div>
   </div>
@@ -1026,6 +1026,368 @@
   menuCloseBtn.addEventListener('click', closeMenu);
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
+  // ---------- i18n ----------
+  const I18N = {
+    en: {
+      'nav.philosophy': `Philosophy`, 'nav.portfolio': `Portfolio`, 'nav.services': `Services`,
+      'nav.lawns': `Lawns`, 'nav.packages': `Packages`, 'nav.contact': `Contact`,
+      'nav.team': `Team`, 'nav.faq': `FAQ`,
+      'btn.submitEnquiry': `Submit an Enquiry`,
+      'hero.eyebrow': `Costa del Sol Landscape Studio`,
+      'hero.h1': `Gardens engineered<br class="hidden md:block"> for the <span class="accent">Mediterranean light</span>`,
+      'hero.sub': `PRANA designs, plants and maintains exceptional outdoor spaces across Marbella, Benahavís and the Costa del Sol — from championship lawns to full estate landscapes.`,
+      'btn.viewOurWork': `View Our Work`,
+      'trustedAcross': `Trusted across`,
+      'philosophy.eyebrow': `Our Philosophy`,
+      'philosophy.h2': `We treat every garden as <span class="accent">architecture that grows.</span>`,
+      'philosophy.p1': `Founded in 2009 by a landscape architect and a hydro-irrigation engineer, PRANA began with a simple frustration: gardens on the Costa del Sol were either imported wholesale from Northern Europe, or left to fight the Andalusian summer alone. We build the third way — planting schemes drawn from the region's own hills and coastline, engineered with the water discipline the climate demands.`,
+      'philosophy.p2': `Sixteen years on, our studio still keeps design, planting and irrigation under one roof — so the plan on paper is the garden that survives August.`,
+      'btn.meetStudio': `Meet the Studio`,
+      'stats.years': `Years of experience`, 'stats.properties': `Properties transformed`,
+      'stats.hectares': `Hectares maintained`, 'stats.satisfaction': `Client satisfaction`,
+      'portfolio.eyebrow': `Portfolio`, 'portfolio.h2': `Selected transformations`,
+      'portfolio.intro': `Scroll to move through each project, hover for the full case study, or use the toggle to see the site before PRANA began work.`,
+      'btn.viewBefore': `View Before`, 'btn.viewAfter': `View After`,
+      'badge.before': `Before`, 'badge.after': `After`, 'btn.viewCase': `View Case`,
+      'portfolio.c0.tag1': `Terrace Garden`, 'portfolio.c0.tag2': `Living Wall`,
+      'portfolio.c0.desc': `A 40m² sea-view terrace landscaped within strict weight limits — lightweight planters, a living wall and timed drip irrigation.`,
+      'portfolio.c1.tag1': `Full Garden`, 'portfolio.c1.tag2': `New Lawn`,
+      'portfolio.c1.desc': `850m² of bare, sloped building site turned into a finished landscape in 5 weeks, cutting irrigation water use by 30%.`,
+      'portfolio.c2.tag1': `Lawn Restoration`, 'portfolio.c2.tag2': `Family Garden`,
+      'portfolio.c2.desc': `A 600m² family lawn worn down by daily use and disease, restored to even, healthy green in just 10 days.`,
+      'portfolio.c3.tag1': `Artificial Turf`, 'portfolio.c3.tag2': `Low Maintenance`,
+      'portfolio.c3.desc': `280m² of natural lawn replaced with premium artificial turf — a year-round garden that cut upkeep costs by 40%.`,
+      'portfolio.c4.tag1': `Full Restoration`, 'portfolio.c4.tag2': `Garden Revival`,
+      'portfolio.c4.desc': `A 700m² garden left untouched for two years, cleared and rebuilt in 6 weeks into one of the street's finest.`,
+      'portfolio.c5.tag1': `Estate Maintenance`, 'portfolio.ongoing': `Ongoing`,
+      'portfolio.c5.desc': `Garden, lawn, olive grove and pool, now under one unified annual care plan with a dedicated crew and monthly reporting.`,
+      'modal.challenge': `The Challenge`, 'modal.whatWeDid': `What We Did`, 'modal.result': `The Result`,
+      'services.eyebrow': `What We Do`, 'services.h2': `Four disciplines, one studio`,
+      'services.1.title': `Landscape design`,
+      'services.1.desc': `Masterplans that read the site first — sun path, slope, sea wind — then draw a garden that will still feel right in fifteen years, not fifteen months.`,
+      'services.2.title': `Planting &amp; soft landscaping`,
+      'services.2.desc': `Mediterranean and native Andalusian species selected for structure and scent as much as survival — olive, cypress, lavender and rosemary, planted to thrive without babying.`,
+      'services.3.title': `Lawns &amp; irrigation`,
+      'services.3.desc': `Our founding specialism. Turf selection, drainage and smart watering engineered specifically for the Costa del Sol's long, dry summers — see the section below.`,
+      'services.lawnLink': `Explore our lawn expertise →`,
+      'services.4.title': `Pools &amp; water features`,
+      'services.4.desc': `Infinity edges, natural stone waterfalls and reflecting pools, integrated into the planting plan rather than dropped onto it.`,
+      'lawns.eyebrow': `Our Specialism`, 'lawns.h2': `Lawns, engineered for Andalusian summers`,
+      'lawns.intro': `Lawns are where PRANA began, and where our engineering runs deepest. Every lawn we lay is chosen, drained and irrigated for the specific microclimate of your plot — not a catalogue default.`,
+      'lawns.1.title': `Natural &amp; artificial turf`,
+      'lawns.1.desc': `Drought-resistant warm-season varieties — Bermuda, Zoysia, Paspalum — for full sun, and premium artificial turf for shaded terraces, rooftops and heavy-shade courtyards.`,
+      'lawns.2.title': `Smart irrigation &amp; water conservation`,
+      'lawns.2.desc': `Weather-linked automatic systems, drip lines for beds, and soil-moisture sensors that cut water use — designed within current Junta de Andalucía restrictions.`,
+      'lawns.3.title': `Seasonal maintenance`,
+      'lawns.3.desc': `Scheduled mowing, core aeration, overseeding and a two-stage fertilisation programme timed to the Mediterranean growing calendar, not a generic quarter.`,
+      'quote.eyebrow': `The PRANA Standard`,
+      'quote.text': `"A garden is the one part of a home that keeps changing. Ours are built to change well — into shade, into maturity, into thirty more Augusts."`,
+      'quote.role': `Founder &amp; Landscape Architect`,
+      'packages.eyebrow': `Service Packages`, 'packages.h2': `Ongoing care, tailored to your estate`,
+      'packages.essential.title': `Essential Care`,
+      'packages.essential.subtitle': `For low-maintenance gardens and lock-up-and-leave villas`,
+      'packages.perMonth': `/month`,
+      'packages.essential.f1': `Weekly mowing &amp; edging`, 'packages.essential.f2': `Seasonal pruning`,
+      'packages.essential.f3': `Irrigation checks`, 'packages.essential.f4': `Fertilisation, 2x/year`,
+      'badge.mostPopular': `Most Popular`,
+      'packages.signature.title': `Signature Care`,
+      'packages.signature.subtitle': `Our most-chosen plan for full private villas`,
+      'packages.signature.f1': `Everything in Essential`, 'packages.signature.f2': `Twice-weekly in peak season`,
+      'packages.signature.f3': `Full drip &amp; irrigation mgmt.`, 'packages.signature.f4': `Pest &amp; disease monitoring`,
+      'packages.signature.f5': `Seasonal planting refresh`,
+      'packages.estate.title': `Estate Care`,
+      'packages.estate.subtitle': `Dedicated, on-site grounds management`,
+      'packages.bespoke': `Bespoke`,
+      'packages.estate.f1': `Everything in Signature`, 'packages.estate.f2': `Dedicated on-site gardener`,
+      'packages.estate.f3': `Pool &amp; water coordination`, 'packages.estate.f4': `Quarterly design review`,
+      'packages.estate.f5': `24/7 priority support`, 'btn.enquire': `Enquire`,
+      'team.eyebrow': `The Studio`, 'team.h2': `Meet the team behind every garden`,
+      'team.role.founder': `Founder &amp; Landscape Architect`, 'team.role.designer': `Garden Designer`,
+      'team.role.irrigation': `Irrigation Engineer`, 'team.role.gardener': `Head Gardener`,
+      'faq.eyebrow': `FAQ`,
+      'faq.h2': `Frequently <span class="accent">Asked Questions</span>`,
+      'faq.intro': `Can't find the answer you're looking for? Our team is happy to walk you through timelines, terrain and everything in between.`,
+      'btn.contactUs': `Contact us`,
+      'faq.q1': `How long does a full garden transformation take?`,
+      'faq.a1': `Most residential projects run 6–12 weeks from groundworks to planting, depending on scale and hardscaping. We agree a fixed timeline with you before any work begins.`,
+      'faq.q2': `Can you work with sloped or difficult terrain?`,
+      'faq.a2': `Yes — much of the Costa del Sol is terraced hillside. We regularly engineer retaining walls, drainage and stepped planting for gradients that other contractors turn away.`,
+      'faq.q3': `Which lawn type suits the Andalusian climate best?`,
+      'faq.a3': `For most gardens we recommend drought-resistant warm-season varieties such as Bermuda or Zoysia, paired with smart irrigation. Artificial turf is popular on shaded terraces and rooftops where natural grass struggles.`,
+      'faq.q4': `Do you handle irrigation permits and water restrictions?`,
+      'faq.a4': `We design every irrigation system to comply with current Junta de Andalucía water-use restrictions, and handle any required community or municipal permits on your behalf.`,
+      'faq.q5': `Is ongoing maintenance included?`,
+      'faq.a5': `Design-and-build projects include a 12-month maintenance period. Beyond that, our Essential, Signature and Estate packages cover mowing, feeding, pruning and irrigation checks year-round.`,
+      'faq.q6': `What languages does your team speak on site?`,
+      'faq.a6': `Our project managers and crews work comfortably in English, Spanish and Russian, so you're never without clear communication.`,
+      'contact.eyebrow': `Get In Touch`, 'contact.h2': `Let's design your garden`,
+      'contact.intro': `Tell us about your property and we'll arrange a site visit within a week.`,
+      'contact.phoneLabel': `Phone &amp; WhatsApp`, 'contact.emailLabel': `Email`,
+      'contact.studioLabel': `Studio &amp; Showroom`, 'contact.languagesLabel': `Languages spoken`,
+      'form.fullName': `Full name`, 'form.phone': `Phone / WhatsApp`, 'form.email': `Email`,
+      'form.whatDoYouNeed': `What do you need?`,
+      'form.opt1': `Full garden design &amp; build`, 'form.opt2': `Lawn installation or renovation`,
+      'form.opt3': `Irrigation system`, 'form.opt4': `Ongoing maintenance package`, 'form.opt5': `Something else`,
+      'form.tellUs': `Tell us about your property`,
+      'form.placeholder': `Location, approximate size, and what you have in mind...`,
+      'btn.submitEnquiryForm': `Submit Enquiry`,
+      'form.thankYou': `Thank you — we'll be in touch within one business day.`,
+      'footer.rights': `All rights reserved.`, 'footer.privacy': `Privacy Policy`, 'footer.terms': `Terms of Service`,
+    },
+    ru: {
+      'nav.philosophy': `Философия`, 'nav.portfolio': `Портфолио`, 'nav.services': `Услуги`,
+      'nav.lawns': `Газоны`, 'nav.packages': `Тарифы`, 'nav.contact': `Контакты`,
+      'nav.team': `Команда`, 'nav.faq': `Вопросы`,
+      'btn.submitEnquiry': `Оставить заявку`,
+      'hero.eyebrow': `Ландшафтная студия Коста-дель-Соль`,
+      'hero.h1': `Сады, созданные<br class="hidden md:block"> для <span class="accent">средиземноморского света</span>`,
+      'hero.sub': `PRANA проектирует, озеленяет и обслуживает исключительные территории в Марбелье, Бенаависе и на всём побережье Коста-дель-Соль — от газонов чемпионского уровня до ландшафтов масштабных поместий.`,
+      'btn.viewOurWork': `Наши проекты`,
+      'trustedAcross': `Нам доверяют в`,
+      'philosophy.eyebrow': `Наша философия`,
+      'philosophy.h2': `Мы относимся к каждому саду как к <span class="accent">архитектуре, которая растёт.</span>`,
+      'philosophy.p1': `PRANA была основана в 2009 году ландшафтным архитектором и инженером по гидроорошению — из простого раздражения: сады на Коста-дель-Соль либо целиком копировали Северную Европу, либо оставались один на один с андалузским летом. Мы выбрали третий путь — растения, вдохновлённые холмами и побережьем региона, и инженерная дисциплина полива, которой требует местный климат.`,
+      'philosophy.p2': `Спустя шестнадцать лет наша студия по-прежнему объединяет дизайн, посадку и орошение под одной крышей — чтобы план на бумаге стал садом, который переживёт август.`,
+      'btn.meetStudio': `Познакомиться со студией`,
+      'stats.years': `Лет опыта`, 'stats.properties': `Преображённых объектов`,
+      'stats.hectares': `Гектаров в обслуживании`, 'stats.satisfaction': `Довольных клиентов`,
+      'portfolio.eyebrow': `Портфолио`, 'portfolio.h2': `Избранные преображения`,
+      'portfolio.intro': `Прокручивайте, чтобы просмотреть каждый проект, наведите курсор для полного описания кейса или переключите вид, чтобы увидеть участок до начала работ PRANA.`,
+      'btn.viewBefore': `Смотреть «до»`, 'btn.viewAfter': `Смотреть «после»`,
+      'badge.before': `До`, 'badge.after': `После`, 'btn.viewCase': `Смотреть кейс`,
+      'portfolio.c0.tag1': `Терраса`, 'portfolio.c0.tag2': `Вертикальное озеленение`,
+      'portfolio.c0.desc': `Терраса 40 м² с видом на море, озеленённая в рамках строгих весовых ограничений — лёгкие кашпо, вертикальное озеленение и капельный полив по таймеру.`,
+      'portfolio.c1.tag1': `Полное озеленение`, 'portfolio.c1.tag2': `Новый газон`,
+      'portfolio.c1.desc': `850 м² голого участка со склоном превратились в готовый ландшафт за 5 недель, а расход воды на полив снизился на 30%.`,
+      'portfolio.c2.tag1': `Восстановление газона`, 'portfolio.c2.tag2': `Семейный сад`,
+      'portfolio.c2.desc': `Семейный газон площадью 600 м², истощённый ежедневной нагрузкой и болезнями, полностью восстановлен до ровной здоровой зелени всего за 10 дней.`,
+      'portfolio.c3.tag1': `Искусственный газон`, 'portfolio.c3.tag2': `Минимальный уход`,
+      'portfolio.c3.desc': `280 м² природного газона заменены искусственным газоном премиум-класса — сад, который безупречно выглядит круглый год, а расходы на уход снизились на 40%.`,
+      'portfolio.c4.tag1': `Полное восстановление`, 'portfolio.c4.tag2': `Возрождение сада`,
+      'portfolio.c4.desc': `Сад площадью 700 м², заброшенный на два года, был расчищен и восстановлен за 6 недель, став одним из лучших на улице.`,
+      'portfolio.c5.tag1': `Обслуживание поместья`, 'portfolio.ongoing': `Постоянно`,
+      'portfolio.c5.desc': `Сад, газон, оливковая роща и бассейн теперь обслуживаются по единому годовому плану с закреплённой бригадой и ежемесячной отчётностью.`,
+      'modal.challenge': `Задача`, 'modal.whatWeDid': `Что мы сделали`, 'modal.result': `Результат`,
+      'services.eyebrow': `Чем мы занимаемся`, 'services.h2': `Четыре направления, одна студия`,
+      'services.1.title': `Ландшафтный дизайн`,
+      'services.1.desc': `Генеральные планы, которые сначала «читают» участок — путь солнца, уклон, морской ветер — а затем создают сад, который будет актуален через пятнадцать лет, а не пятнадцать месяцев.`,
+      'services.2.title': `Посадка и озеленение`,
+      'services.2.desc': `Средиземноморские и местные андалузские растения подобраны не только ради выживания, но и ради формы и аромата — оливы, кипарисы, лаванда и розмарин, которые процветают без излишней опеки.`,
+      'services.3.title': `Газоны и орошение`,
+      'services.3.desc': `Наша основная специализация. Подбор газонных трав, дренаж и умный полив, спроектированные специально для долгого сухого лета Коста-дель-Соль — подробнее ниже.`,
+      'services.lawnLink': `Узнать больше о газонах →`,
+      'services.4.title': `Бассейны и водные объекты`,
+      'services.4.desc': `Бесконечные края, водопады из натурального камня и зеркальные пруды, органично встроенные в план озеленения, а не добавленные поверх него.`,
+      'lawns.eyebrow': `Наша специализация`, 'lawns.h2': `Газоны, созданные для андалузского лета`,
+      'lawns.intro': `Именно с газонов началась PRANA, и здесь наш инженерный подход проявляется полнее всего. Каждый газон подбирается, дренируется и орошается под конкретный микроклимат вашего участка — а не по стандарту из каталога.`,
+      'lawns.1.title': `Натуральный и искусственный газон`,
+      'lawns.1.desc': `Засухоустойчивые теплолюбивые сорта — бермудская трава, зойсия, паспалум — для солнечных зон, и искусственный газон премиум-класса для затенённых террас, крыш и тенистых дворов.`,
+      'lawns.2.title': `Умный полив и экономия воды`,
+      'lawns.2.desc': `Автоматические системы, связанные с погодой, капельные линии для клумб и датчики влажности почвы, снижающие расход воды — всё в рамках действующих ограничений Хунты Андалусии.`,
+      'lawns.3.title': `Сезонный уход`,
+      'lawns.3.desc': `Плановая стрижка, аэрация, подсев и двухэтапная программа удобрения, привязанные к средиземноморскому календарю роста, а не к произвольному кварталу.`,
+      'quote.eyebrow': `Стандарт PRANA`,
+      'quote.text': `«Сад — единственная часть дома, которая продолжает меняться. Наши сады созданы меняться красиво — обретая тень, зрелость, ещё тридцать таких августов».`,
+      'quote.role': `Основатель и ландшафтный архитектор`,
+      'packages.eyebrow': `Тарифные планы`, 'packages.h2': `Постоянный уход, адаптированный под ваш участок`,
+      'packages.essential.title': `Базовый уход`,
+      'packages.essential.subtitle': `Для неприхотливых садов и вилл, которые часто пустуют`,
+      'packages.perMonth': `/мес`,
+      'packages.essential.f1': `Еженедельная стрижка и окантовка`, 'packages.essential.f2': `Сезонная обрезка`,
+      'packages.essential.f3': `Проверка полива`, 'packages.essential.f4': `Удобрение, 2 раза в год`,
+      'badge.mostPopular': `Самый популярный`,
+      'packages.signature.title': `Фирменный уход`,
+      'packages.signature.subtitle': `Наш самый популярный план для полноценных частных вилл`,
+      'packages.signature.f1': `Всё из «Базового ухода»`, 'packages.signature.f2': `Дважды в неделю в высокий сезон`,
+      'packages.signature.f3': `Полное управление капельным поливом`, 'packages.signature.f4': `Контроль вредителей и болезней`,
+      'packages.signature.f5': `Сезонное обновление посадок`,
+      'packages.estate.title': `Уход за поместьем`,
+      'packages.estate.subtitle': `Выделенное управление территорией на месте`,
+      'packages.bespoke': `Индивидуально`,
+      'packages.estate.f1': `Всё из «Фирменного ухода»`, 'packages.estate.f2': `Закреплённый садовник на объекте`,
+      'packages.estate.f3': `Координация бассейна и водных объектов`, 'packages.estate.f4': `Ежеквартальный дизайн-аудит`,
+      'packages.estate.f5': `Приоритетная поддержка 24/7`, 'btn.enquire': `Узнать больше`,
+      'team.eyebrow': `Студия`, 'team.h2': `Команда, стоящая за каждым садом`,
+      'team.role.founder': `Основатель и ландшафтный архитектор`, 'team.role.designer': `Ландшафтный дизайнер`,
+      'team.role.irrigation': `Инженер по орошению`, 'team.role.gardener': `Главный садовник`,
+      'faq.eyebrow': `FAQ`,
+      'faq.h2': `Часто задаваемые <span class="accent">вопросы</span>`,
+      'faq.intro': `Не нашли ответ на свой вопрос? Наша команда с радостью расскажет о сроках, особенностях участка и всём остальном.`,
+      'btn.contactUs': `Связаться с нами`,
+      'faq.q1': `Сколько времени занимает полное преображение сада?`,
+      'faq.a1': `Большинство жилых проектов занимают 6–12 недель от земляных работ до посадки, в зависимости от масштаба и объёма мощения. Мы согласовываем точные сроки с вами до начала работ.`,
+      'faq.q2': `Работаете ли вы со сложным рельефом и склонами?`,
+      'faq.a2': `Да — значительная часть Коста-дель-Соль представляет собой террасированные склоны. Мы регулярно проектируем подпорные стены, дренаж и ступенчатые посадки для уклонов, от которых отказываются другие подрядчики.`,
+      'faq.q3': `Какой тип газона лучше всего подходит для андалузского климата?`,
+      'faq.a3': `Для большинства садов мы рекомендуем засухоустойчивые теплолюбивые сорта, такие как бермудская трава или зойсия, в сочетании с умным поливом. Искусственный газон популярен на затенённых террасах и крышах, где натуральной траве сложно расти.`,
+      'faq.q4': `Занимаетесь ли вы разрешениями на полив и водными ограничениями?`,
+      'faq.a4': `Мы проектируем каждую систему полива в соответствии с действующими ограничениями Хунты Андалусии на водопользование и берём на себя оформление необходимых разрешений от сообщества или муниципалитета.`,
+      'faq.q5': `Включено ли постоянное обслуживание?`,
+      'faq.a5': `Проекты «под ключ» включают 12 месяцев обслуживания. После этого наши тарифы «Базовый», «Фирменный» и «Поместье» обеспечивают стрижку, подкормку, обрезку и проверку полива круглый год.`,
+      'faq.q6': `На каких языках говорит ваша команда на объекте?`,
+      'faq.a6': `Наши руководители проектов и бригады свободно работают на английском, испанском и русском языках, поэтому вы всегда получаете чёткую коммуникацию.`,
+      'contact.eyebrow': `Свяжитесь с нами`, 'contact.h2': `Создадим ваш сад вместе`,
+      'contact.intro': `Расскажите нам о своём участке, и мы организуем выезд на объект в течение недели.`,
+      'contact.phoneLabel': `Телефон и WhatsApp`, 'contact.emailLabel': `Эл. почта`,
+      'contact.studioLabel': `Студия и шоурум`, 'contact.languagesLabel': `Языки общения`,
+      'form.fullName': `Полное имя`, 'form.phone': `Телефон / WhatsApp`, 'form.email': `Эл. почта`,
+      'form.whatDoYouNeed': `Что вам нужно?`,
+      'form.opt1': `Полный дизайн и строительство сада`, 'form.opt2': `Укладка или обновление газона`,
+      'form.opt3': `Система полива`, 'form.opt4': `Пакет постоянного обслуживания`, 'form.opt5': `Другое`,
+      'form.tellUs': `Расскажите о своём участке`,
+      'form.placeholder': `Расположение, примерная площадь и что вы задумали...`,
+      'btn.submitEnquiryForm': `Отправить заявку`,
+      'form.thankYou': `Спасибо — мы свяжемся с вами в течение одного рабочего дня.`,
+      'footer.rights': `Все права защищены.`, 'footer.privacy': `Политика конфиденциальности`, 'footer.terms': `Условия использования`,
+    },
+    es: {
+      'nav.philosophy': `Filosofía`, 'nav.portfolio': `Portafolio`, 'nav.services': `Servicios`,
+      'nav.lawns': `Céspedes`, 'nav.packages': `Planes`, 'nav.contact': `Contacto`,
+      'nav.team': `Equipo`, 'nav.faq': `Preguntas`,
+      'btn.submitEnquiry': `Enviar consulta`,
+      'hero.eyebrow': `Estudio de Paisajismo Costa del Sol`,
+      'hero.h1': `Jardines diseñados<br class="hidden md:block"> para la <span class="accent">luz mediterránea</span>`,
+      'hero.sub': `PRANA diseña, planta y mantiene espacios exteriores excepcionales en Marbella, Benahavís y toda la Costa del Sol, desde céspedes de nivel profesional hasta paisajismo integral de fincas.`,
+      'btn.viewOurWork': `Ver nuestros proyectos`,
+      'trustedAcross': `Presentes en`,
+      'philosophy.eyebrow': `Nuestra filosofía`,
+      'philosophy.h2': `Tratamos cada jardín como <span class="accent">arquitectura que crece.</span>`,
+      'philosophy.p1': `Fundada en 2009 por un arquitecto paisajista y un ingeniero de hidrorriego, PRANA nació de una frustración sencilla: los jardines de la Costa del Sol se importaban en bloque desde el norte de Europa, o se dejaban solos frente al verano andaluz. Construimos una tercera vía: composiciones vegetales inspiradas en las colinas y la costa de la región, con la disciplina de riego que exige este clima.`,
+      'philosophy.p2': `Dieciséis años después, nuestro estudio sigue reuniendo diseño, plantación y riego bajo un mismo techo, para que el plano sobre el papel sea el jardín que sobrevive a agosto.`,
+      'btn.meetStudio': `Conoce el estudio`,
+      'stats.years': `Años de experiencia`, 'stats.properties': `Propiedades transformadas`,
+      'stats.hectares': `Hectáreas mantenidas`, 'stats.satisfaction': `Satisfacción de clientes`,
+      'portfolio.eyebrow': `Portafolio`, 'portfolio.h2': `Transformaciones seleccionadas`,
+      'portfolio.intro': `Desplácese para ver cada proyecto, pase el cursor para ver el caso completo, o use el interruptor para ver el lugar antes de que PRANA comenzara a trabajar.`,
+      'btn.viewBefore': `Ver antes`, 'btn.viewAfter': `Ver después`,
+      'badge.before': `Antes`, 'badge.after': `Después`, 'btn.viewCase': `Ver caso`,
+      'portfolio.c0.tag1': `Jardín en terraza`, 'portfolio.c0.tag2': `Muro verde`,
+      'portfolio.c0.desc': `Una terraza de 40 m² con vistas al mar, ajardinada dentro de estrictos límites de peso: macetas ligeras, un muro verde y riego por goteo programado.`,
+      'portfolio.c1.tag1': `Jardín completo`, 'portfolio.c1.tag2': `Césped nuevo`,
+      'portfolio.c1.desc': `850 m² de un terreno en pendiente y sin urbanizar, transformados en un paisaje terminado en 5 semanas, reduciendo el consumo de agua de riego en un 30%.`,
+      'portfolio.c2.tag1': `Restauración de césped`, 'portfolio.c2.tag2': `Jardín familiar`,
+      'portfolio.c2.desc': `Un césped familiar de 600 m² desgastado por el uso diario y las enfermedades, restaurado a un verde uniforme y saludable en solo 10 días.`,
+      'portfolio.c3.tag1': `Césped artificial`, 'portfolio.c3.tag2': `Bajo mantenimiento`,
+      'portfolio.c3.desc': `280 m² de césped natural sustituidos por césped artificial premium: un jardín impecable todo el año que redujo los costes de mantenimiento en un 40%.`,
+      'portfolio.c4.tag1': `Restauración integral`, 'portfolio.c4.tag2': `Renacimiento del jardín`,
+      'portfolio.c4.desc': `Un jardín de 700 m² abandonado durante dos años, despejado y reconstruido en 6 semanas hasta convertirse en uno de los mejores de la calle.`,
+      'portfolio.c5.tag1': `Mantenimiento de finca`, 'portfolio.ongoing': `Continuo`,
+      'portfolio.c5.desc': `Jardín, césped, olivar y piscina, ahora bajo un único plan de mantenimiento anual con un equipo dedicado e informes mensuales.`,
+      'modal.challenge': `El Reto`, 'modal.whatWeDid': `Qué Hicimos`, 'modal.result': `Resultado`,
+      'services.eyebrow': `Qué Hacemos`, 'services.h2': `Cuatro disciplinas, un estudio`,
+      'services.1.title': `Diseño de paisaje`,
+      'services.1.desc': `Planes maestros que primero interpretan el terreno —recorrido solar, pendiente, viento marino— y luego diseñan un jardín que seguirá sintiéndose acertado dentro de quince años, no de quince meses.`,
+      'services.2.title': `Plantación y jardinería`,
+      'services.2.desc': `Especies mediterráneas y andaluzas autóctonas elegidas tanto por su estructura y aroma como por su resistencia: olivos, cipreses, lavanda y romero, plantados para prosperar sin necesitar mimos.`,
+      'services.3.title': `Céspedes y riego`,
+      'services.3.desc': `Nuestra especialidad fundacional. Selección de césped, drenaje y riego inteligente diseñados específicamente para los largos y secos veranos de la Costa del Sol — ver la sección siguiente.`,
+      'services.lawnLink': `Descubra nuestra experiencia en céspedes →`,
+      'services.4.title': `Piscinas y elementos de agua`,
+      'services.4.desc': `Bordes infinitos, cascadas de piedra natural y estanques reflectantes, integrados en el plan de plantación en lugar de añadidos después.`,
+      'lawns.eyebrow': `Nuestra especialidad`, 'lawns.h2': `Céspedes diseñados para los veranos andaluces`,
+      'lawns.intro': `Los céspedes son el origen de PRANA, y donde nuestra ingeniería llega más lejos. Cada césped que instalamos se elige, drena y riega para el microclima específico de su parcela, no según un estándar de catálogo.`,
+      'lawns.1.title': `Césped natural y artificial`,
+      'lawns.1.desc': `Variedades resistentes a la sequía de estación cálida —Bermuda, Zoysia, Paspalum— para pleno sol, y césped artificial premium para terrazas sombreadas, azoteas y patios con mucha sombra.`,
+      'lawns.2.title': `Riego inteligente y ahorro de agua`,
+      'lawns.2.desc': `Sistemas automáticos conectados a la meteorología, líneas de goteo para parterres y sensores de humedad del suelo que reducen el consumo de agua, diseñados conforme a las restricciones vigentes de la Junta de Andalucía.`,
+      'lawns.3.title': `Mantenimiento estacional`,
+      'lawns.3.desc': `Siega programada, aireación, resiembra y un programa de fertilización en dos etapas, ajustados al calendario de crecimiento mediterráneo, no a un trimestre genérico.`,
+      'quote.eyebrow': `El Estándar PRANA`,
+      'quote.text': `«Un jardín es la única parte de una casa que sigue cambiando. Los nuestros están hechos para cambiar bien: hacia la sombra, hacia la madurez, hacia treinta agostos más».`,
+      'quote.role': `Fundador y Arquitecto Paisajista`,
+      'packages.eyebrow': `Planes de Servicio`, 'packages.h2': `Cuidado continuo, adaptado a su propiedad`,
+      'packages.essential.title': `Cuidado Esencial`,
+      'packages.essential.subtitle': `Para jardines de bajo mantenimiento y villas que se dejan cerradas por temporadas`,
+      'packages.perMonth': `/mes`,
+      'packages.essential.f1': `Siega y perfilado semanal`, 'packages.essential.f2': `Poda estacional`,
+      'packages.essential.f3': `Revisión del riego`, 'packages.essential.f4': `Fertilización, 2 veces al año`,
+      'badge.mostPopular': `Más Popular`,
+      'packages.signature.title': `Cuidado Exclusivo`,
+      'packages.signature.subtitle': `Nuestro plan más elegido para villas privadas completas`,
+      'packages.signature.f1': `Todo lo del Cuidado Esencial`, 'packages.signature.f2': `Dos veces por semana en temporada alta`,
+      'packages.signature.f3': `Gestión completa de riego por goteo`, 'packages.signature.f4': `Control de plagas y enfermedades`,
+      'packages.signature.f5': `Renovación estacional de plantas`,
+      'packages.estate.title': `Cuidado de Finca`,
+      'packages.estate.subtitle': `Gestión dedicada del jardín in situ`,
+      'packages.bespoke': `A Medida`,
+      'packages.estate.f1': `Todo lo del Cuidado Exclusivo`, 'packages.estate.f2': `Jardinero dedicado en el lugar`,
+      'packages.estate.f3': `Coordinación de piscina y agua`, 'packages.estate.f4': `Revisión de diseño trimestral`,
+      'packages.estate.f5': `Soporte prioritario 24/7`, 'btn.enquire': `Consultar`,
+      'team.eyebrow': `El Estudio`, 'team.h2': `Conoce al equipo detrás de cada jardín`,
+      'team.role.founder': `Fundador y Arquitecto Paisajista`, 'team.role.designer': `Diseñadora de Jardines`,
+      'team.role.irrigation': `Ingeniero de Riego`, 'team.role.gardener': `Jardinero Jefe`,
+      'faq.eyebrow': `FAQ`,
+      'faq.h2': `Preguntas <span class="accent">Frecuentes</span>`,
+      'faq.intro': `¿No encuentra la respuesta que busca? Nuestro equipo estará encantado de explicarle plazos, terrenos y todo lo demás.`,
+      'btn.contactUs': `Contáctanos`,
+      'faq.q1': `¿Cuánto tiempo lleva una transformación completa del jardín?`,
+      'faq.a1': `La mayoría de los proyectos residenciales duran de 6 a 12 semanas, desde la obra civil hasta la plantación, según la escala y el pavimentado. Acordamos un plazo fijo con usted antes de comenzar cualquier trabajo.`,
+      'faq.q2': `¿Pueden trabajar con terrenos en pendiente o difíciles?`,
+      'faq.a2': `Sí, gran parte de la Costa del Sol son laderas en terrazas. Diseñamos habitualmente muros de contención, drenaje y plantaciones escalonadas para pendientes que otros contratistas rechazan.`,
+      'faq.q3': `¿Qué tipo de césped se adapta mejor al clima andaluz?`,
+      'faq.a3': `Para la mayoría de los jardines recomendamos variedades resistentes a la sequía de estación cálida, como Bermuda o Zoysia, combinadas con riego inteligente. El césped artificial es popular en terrazas sombreadas y azoteas donde el césped natural tiene dificultades.`,
+      'faq.q4': `¿Se encargan de los permisos de riego y las restricciones de agua?`,
+      'faq.a4': `Diseñamos cada sistema de riego conforme a las restricciones vigentes de uso de agua de la Junta de Andalucía, y gestionamos en su nombre cualquier permiso comunitario o municipal necesario.`,
+      'faq.q5': `¿Incluye mantenimiento continuo?`,
+      'faq.a5': `Los proyectos de diseño y construcción incluyen un periodo de mantenimiento de 12 meses. Después, nuestros planes Esencial, Exclusivo y de Finca cubren siega, abonado, poda y revisión del riego durante todo el año.`,
+      'faq.q6': `¿Qué idiomas habla su equipo en el lugar de trabajo?`,
+      'faq.a6': `Nuestros jefes de proyecto y equipos trabajan con soltura en inglés, español y ruso, para que la comunicación sea siempre clara.`,
+      'contact.eyebrow': `Ponte en Contacto`, 'contact.h2': `Diseñemos su jardín`,
+      'contact.intro': `Cuéntenos sobre su propiedad y organizaremos una visita al lugar en una semana.`,
+      'contact.phoneLabel': `Teléfono y WhatsApp`, 'contact.emailLabel': `Correo electrónico`,
+      'contact.studioLabel': `Estudio y sala de exposición`, 'contact.languagesLabel': `Idiomas`,
+      'form.fullName': `Nombre completo`, 'form.phone': `Teléfono / WhatsApp`, 'form.email': `Correo electrónico`,
+      'form.whatDoYouNeed': `¿Qué necesita?`,
+      'form.opt1': `Diseño y construcción integral de jardín`, 'form.opt2': `Instalación o renovación de césped`,
+      'form.opt3': `Sistema de riego`, 'form.opt4': `Paquete de mantenimiento continuo`, 'form.opt5': `Otra cosa`,
+      'form.tellUs': `Cuéntenos sobre su propiedad`,
+      'form.placeholder': `Ubicación, tamaño aproximado y lo que tiene en mente...`,
+      'btn.submitEnquiryForm': `Enviar Consulta`,
+      'form.thankYou': `Gracias, nos pondremos en contacto en un día hábil.`,
+      'footer.rights': `Todos los derechos reservados.`, 'footer.privacy': `Política de privacidad`, 'footer.terms': `Términos de servicio`,
+    },
+  };
+
+  function applyLanguage(lang) {
+    if (!I18N[lang]) lang = 'en';
+    const dict = I18N[lang];
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (dict[key] !== undefined) el.setAttribute('placeholder', dict[key]);
+    });
+    const langBtnLabel = document.getElementById('langBtnLabel');
+    if (langBtnLabel) langBtnLabel.textContent = lang.toUpperCase();
+    document.querySelectorAll('.lang-option').forEach(btn => {
+      const check = btn.querySelector('.lang-check');
+      if (check) check.classList.toggle('hidden', btn.dataset.lang !== lang);
+    });
+    try { localStorage.setItem('prana-lang', lang); } catch (e) {}
+    currentLang = lang;
+  }
+
+  let currentLang = 'en';
+  document.querySelectorAll('.lang-option').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      applyLanguage(btn.dataset.lang);
+      langMenu.classList.add('closed');
+      langBtn.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  let savedLang = 'en';
+  try { savedLang = localStorage.getItem('prana-lang') || 'en'; } catch (e) {}
+  applyLanguage(savedLang);
+
   // language dropdown
   const langBtn = document.getElementById('langBtn');
   const langMenu = document.getElementById('langMenu');
@@ -1045,102 +1407,284 @@
       const badge = wrap.querySelector('.state-badge');
       const showingAfter = wrap.dataset.state !== 'before';
       wrap.dataset.state = showingAfter ? 'before' : 'after';
-      btn.textContent = showingAfter ? 'View After' : 'View Before';
-      badge.textContent = showingAfter ? 'Before' : 'After';
+      btn.textContent = I18N[currentLang][showingAfter ? 'btn.viewAfter' : 'btn.viewBefore'];
+      badge.textContent = I18N[currentLang][showingAfter ? 'badge.before' : 'badge.after'];
     });
   });
 
-  // case study data + cursor-follow badge + detail modal
-  const CASE_STUDIES = [
-    {
-      image: 'images/case-cancelada-after.jpg',
-      tags: ['Terrace Garden', 'Living Wall'],
-      title: 'Ático Cancelada',
-      location: 'Cancelada · 2024',
-      challenge: 'A small 40m² terrace apartment with sea views needed greenery without adding structural weight — the building’s load limits ruled out heavy planters and soil.',
-      steps: [
-        'Selected lightweight ceramic planters and a specialised lightweight growing medium',
-        'Created a vertical living wall along one side of the terrace',
-        'Planted low palms, succulents and flowering Mediterranean species',
-        'Installed timer-controlled drip irrigation',
-      ],
-      result: 'The terrace became a cozy green oasis while staying safely within the structure’s weight allowance — the client has since signed on for seasonal maintenance too.',
-    },
-    {
-      image: 'images/case-laquinta-after.jpg',
-      tags: ['Full Garden', 'New Lawn'],
-      title: 'Villa La Quinta',
-      location: 'La Quinta · 2024',
-      challenge: 'The owner of a newly built villa came to us straight after construction finished — the 850m² plot was a bare building site with uneven grade and rocky soil.',
-      steps: [
-        'Carried out a soil analysis and designed a drainage plan around the site’s slope',
-        'Delivered and graded 350m³ of fertile topsoil',
-        'Laid rolled turf in a Mediterranean-climate-hardy variety (a Bermuda/Paspalum blend)',
-        'Installed automatic irrigation with a soil-moisture sensor',
-        'Planted Mediterranean species — olives, lavender, rosemary, agaves — in the low-water zones',
-        'Finished the pool area with decorative tiling and tropical planting',
-      ],
-      result: 'The whole plot was landscaped and handed over in 5 weeks. The lawn established without a single bald patch, and zoned irrigation cut water use by 30%.',
-    },
-    {
-      image: 'images/case-sierrablanca-after.jpg',
-      tags: ['Lawn Restoration', 'Family Garden'],
-      title: 'Villa Sierra Blanca',
-      location: 'Sierra Blanca, Marbella · 2023',
-      challenge: 'A 600m² lawn suffering from fungal disease and worn, trampled patches — a family with children and a dog used the grounds heavily every day.',
-      steps: [
-        'Aerated and scarified (dethatched) the existing lawn',
-        'Replaced the topsoil in the worst-affected areas',
-        'Laid new rolled turf in a wear-resistant variety',
-        'Set a season-long watering and fertilising schedule',
-        'Trained the client’s own gardener in basic upkeep',
-      ],
-      result: 'The lawn was fully restored in 10 days. The client told us that for the first time in three years, it stayed evenly green all year round.',
-    },
-    {
-      image: 'images/case-calahonda-after.jpg',
-      tags: ['Artificial Turf', 'Low Maintenance'],
-      title: 'Villa Calahonda',
-      location: 'Calahonda · 2023',
-      challenge: 'A family who spend several months of the year away wanted a garden that looked immaculate year-round, without paying for watering or mowing (280m²).',
-      steps: [
-        'Removed the old lawn and levelled the base',
-        'Laid a drainage layer and shock-pad underlay',
-        'Installed a premium artificial turf with a natural-looking texture',
-        'Finished the transition zones with decorative stone and low-maintenance planting',
-      ],
-      result: 'The garden now looks flawless in every season with no watering or mowing — the client cut their annual garden maintenance budget by roughly 40%.',
-    },
-    {
-      image: 'images/case-mijascosta-after.jpg',
-      tags: ['Full Restoration', 'Garden Revival'],
-      title: 'Villa Mijas Costa',
-      location: 'Mijas Costa · 2024',
-      challenge: 'The new owners bought a villa with a 700m² plot that had gone unmaintained for over two years — overgrown, with dead trees and irrigation that no longer worked.',
-      steps: [
-        'Cleared the site of weeds and dead planting',
-        'Pruned and revived the healthy trees and shrubs',
-        'Redesigned the irrigation system from scratch',
-        'Laid a new lawn and added Mediterranean planting for textural contrast',
-        'Built a barbecue area with decorative landscaping',
-      ],
-      result: 'In 6 weeks the plot went from "abandoned" to one of the best-kept gardens on the street — neighbours and the estate agent now recommend us to new buyers in the area.',
-    },
-    {
-      image: 'images/case-sotogrande-after.jpg',
-      tags: ['Estate Maintenance', '1,500m²'],
-      title: 'Residencia Sotogrande',
-      location: 'Sotogrande · Ongoing',
-      challenge: 'The owner of a large residence (1,500m² of grounds, including garden, lawn, an olive grove and a pool) wanted one reliable contractor on a permanent basis, replacing several disconnected crews.',
-      steps: [
-        'Built a single annual care plan covering mowing, watering, feeding, pruning and seasonal planting',
-        'Centralised irrigation control into one automated system',
-        'Introduced monthly reporting with photo documentation of the grounds',
-        'Assigned a dedicated gardening crew to the property',
-      ],
-      result: 'The estate now runs under one unified, accountable standard of care year-round, with full visibility for the owner every month.',
-    },
-  ];
+  // case study data (by language) + cursor-follow badge + detail modal
+  const CASE_STUDIES = {
+    en: [
+      {
+        image: 'images/case-cancelada-after.jpg',
+        tags: ['Terrace Garden', 'Living Wall'],
+        title: 'Ático Cancelada',
+        location: 'Cancelada · 2024',
+        challenge: `A small 40m² terrace apartment with sea views needed greenery without adding structural weight — the building's load limits ruled out heavy planters and soil.`,
+        steps: [
+          `Selected lightweight ceramic planters and a specialised lightweight growing medium`,
+          `Created a vertical living wall along one side of the terrace`,
+          `Planted low palms, succulents and flowering Mediterranean species`,
+          `Installed timer-controlled drip irrigation`,
+        ],
+        result: `The terrace became a cozy green oasis while staying safely within the structure's weight allowance — the client has since signed on for seasonal maintenance too.`,
+      },
+      {
+        image: 'images/case-laquinta-after.jpg',
+        tags: ['Full Garden', 'New Lawn'],
+        title: 'Villa La Quinta',
+        location: 'La Quinta · 2024',
+        challenge: `The owner of a newly built villa came to us straight after construction finished — the 850m² plot was a bare building site with uneven grade and rocky soil.`,
+        steps: [
+          `Carried out a soil analysis and designed a drainage plan around the site's slope`,
+          `Delivered and graded 350m³ of fertile topsoil`,
+          `Laid rolled turf in a Mediterranean-climate-hardy variety (a Bermuda/Paspalum blend)`,
+          `Installed automatic irrigation with a soil-moisture sensor`,
+          `Planted Mediterranean species — olives, lavender, rosemary, agaves — in the low-water zones`,
+          `Finished the pool area with decorative tiling and tropical planting`,
+        ],
+        result: `The whole plot was landscaped and handed over in 5 weeks. The lawn established without a single bald patch, and zoned irrigation cut water use by 30%.`,
+      },
+      {
+        image: 'images/case-sierrablanca-after.jpg',
+        tags: ['Lawn Restoration', 'Family Garden'],
+        title: 'Villa Sierra Blanca',
+        location: 'Sierra Blanca, Marbella · 2023',
+        challenge: `A 600m² lawn suffering from fungal disease and worn, trampled patches — a family with children and a dog used the grounds heavily every day.`,
+        steps: [
+          `Aerated and scarified (dethatched) the existing lawn`,
+          `Replaced the topsoil in the worst-affected areas`,
+          `Laid new rolled turf in a wear-resistant variety`,
+          `Set a season-long watering and fertilising schedule`,
+          `Trained the client's own gardener in basic upkeep`,
+        ],
+        result: `The lawn was fully restored in 10 days. The client told us that for the first time in three years, it stayed evenly green all year round.`,
+      },
+      {
+        image: 'images/case-calahonda-after.jpg',
+        tags: ['Artificial Turf', 'Low Maintenance'],
+        title: 'Villa Calahonda',
+        location: 'Calahonda · 2023',
+        challenge: `A family who spend several months of the year away wanted a garden that looked immaculate year-round, without paying for watering or mowing (280m²).`,
+        steps: [
+          `Removed the old lawn and levelled the base`,
+          `Laid a drainage layer and shock-pad underlay`,
+          `Installed a premium artificial turf with a natural-looking texture`,
+          `Finished the transition zones with decorative stone and low-maintenance planting`,
+        ],
+        result: `The garden now looks flawless in every season with no watering or mowing — the client cut their annual garden maintenance budget by roughly 40%.`,
+      },
+      {
+        image: 'images/case-mijascosta-after.jpg',
+        tags: ['Full Restoration', 'Garden Revival'],
+        title: 'Villa Mijas Costa',
+        location: 'Mijas Costa · 2024',
+        challenge: `The new owners bought a villa with a 700m² plot that had gone unmaintained for over two years — overgrown, with dead trees and irrigation that no longer worked.`,
+        steps: [
+          `Cleared the site of weeds and dead planting`,
+          `Pruned and revived the healthy trees and shrubs`,
+          `Redesigned the irrigation system from scratch`,
+          `Laid a new lawn and added Mediterranean planting for textural contrast`,
+          `Built a barbecue area with decorative landscaping`,
+        ],
+        result: `In 6 weeks the plot went from "abandoned" to one of the best-kept gardens on the street — neighbours and the estate agent now recommend us to new buyers in the area.`,
+      },
+      {
+        image: 'images/case-sotogrande-after.jpg',
+        tags: ['Estate Maintenance', '1,500m²'],
+        title: 'Residencia Sotogrande',
+        location: 'Sotogrande · Ongoing',
+        challenge: `The owner of a large residence (1,500m² of grounds, including garden, lawn, an olive grove and a pool) wanted one reliable contractor on a permanent basis, replacing several disconnected crews.`,
+        steps: [
+          `Built a single annual care plan covering mowing, watering, feeding, pruning and seasonal planting`,
+          `Centralised irrigation control into one automated system`,
+          `Introduced monthly reporting with photo documentation of the grounds`,
+          `Assigned a dedicated gardening crew to the property`,
+        ],
+        result: `The estate now runs under one unified, accountable standard of care year-round, with full visibility for the owner every month.`,
+      },
+    ],
+    ru: [
+      {
+        image: 'images/case-cancelada-after.jpg',
+        tags: ['Терраса', 'Вертикальное озеленение'],
+        title: 'Ático Cancelada',
+        location: 'Канселада · 2024',
+        challenge: `Небольшая терраса апартаментов площадью 40 м² с видом на море нуждалась в озеленении без увеличения нагрузки на конструкцию — ограничения по весу здания исключали тяжёлые кашпо и грунт.`,
+        steps: [
+          `Подобрали лёгкие керамические кашпо и специальный облегчённый грунт`,
+          `Создали вертикальную зелёную стену вдоль одной из сторон террасы`,
+          `Высадили низкорослые пальмы, суккуленты и цветущие средиземноморские растения`,
+          `Установили капельный полив с таймером`,
+        ],
+        result: `Терраса превратилась в уютный зелёный оазис, оставаясь в пределах допустимой нагрузки на конструкцию — клиент впоследствии также заказал сезонное обслуживание.`,
+      },
+      {
+        image: 'images/case-laquinta-after.jpg',
+        tags: ['Полное озеленение', 'Новый газон'],
+        title: 'Villa La Quinta',
+        location: 'Ла-Кинта · 2024',
+        challenge: `Владелец новой виллы обратился к нам сразу после завершения строительства — участок площадью 850 м² представлял собой голую стройплощадку с неровным рельефом и каменистой почвой.`,
+        steps: [
+          `Провели анализ почвы и разработали план дренажа с учётом уклона участка`,
+          `Завезли и распределили 350 м³ плодородного грунта`,
+          `Уложили рулонный газон устойчивого к средиземноморскому климату сорта (смесь бермудской травы и паспалума)`,
+          `Установили автоматический полив с датчиком влажности почвы`,
+          `Высадили средиземноморские растения — оливы, лаванду, розмарин, агавы — в зонах с минимальным поливом`,
+          `Оформили зону бассейна декоративной плиткой и тропическими растениями`,
+        ],
+        result: `Весь участок был озеленён и сдан клиенту за 5 недель. Газон прижился без единой проплешины, а зональный полив снизил расход воды на 30%.`,
+      },
+      {
+        image: 'images/case-sierrablanca-after.jpg',
+        tags: ['Восстановление газона', 'Семейный сад'],
+        title: 'Villa Sierra Blanca',
+        location: 'Сьерра-Бланка, Марбелья · 2023',
+        challenge: `Газон площадью 600 м² страдал от грибковых заболеваний и вытоптанных участков — семья с детьми и собакой активно использовала территорию каждый день.`,
+        steps: [
+          `Провели аэрацию и вертикуляцию существующего газона`,
+          `Заменили верхний слой почвы в наиболее повреждённых зонах`,
+          `Уложили новый рулонный газон устойчивого к вытаптыванию сорта`,
+          `Настроили график полива и внесения удобрений на весь сезон`,
+          `Обучили садовника клиента базовому уходу за газоном`,
+        ],
+        result: `Газон был полностью восстановлен за 10 дней. Клиент отметил, что впервые за три года лужайка оставалась равномерно зелёной круглый год.`,
+      },
+      {
+        image: 'images/case-calahonda-after.jpg',
+        tags: ['Искусственный газон', 'Минимальный уход'],
+        title: 'Villa Calahonda',
+        location: 'Калаонда · 2023',
+        challenge: `Семья, которая проводит несколько месяцев в году вдали от дома, хотела сад, который выглядит безупречно круглый год, без затрат на полив и стрижку (280 м²).`,
+        steps: [
+          `Демонтировали старый газон и выровняли основание`,
+          `Уложили дренажный слой и амортизирующую подложку`,
+          `Установили искусственный газон премиум-класса с натуралистичной текстурой`,
+          `Оформили переходные зоны декоративным камнем и неприхотливыми растениями`,
+        ],
+        result: `Теперь сад выглядит безупречно в любое время года без полива и стрижки — клиент сократил годовой бюджет на обслуживание сада примерно на 40%.`,
+      },
+      {
+        image: 'images/case-mijascosta-after.jpg',
+        tags: ['Полное восстановление', 'Возрождение сада'],
+        title: 'Villa Mijas Costa',
+        location: 'Михас-Коста · 2024',
+        challenge: `Новые владельцы приобрели виллу с участком площадью 700 м², который не обслуживался более двух лет — заросший, с погибшими деревьями и неработающей системой полива.`,
+        steps: [
+          `Расчистили участок от сорняков и погибших растений`,
+          `Обрезали и восстановили здоровые деревья и кустарники`,
+          `Полностью перепроектировали систему полива`,
+          `Заложили новый газон и добавили средиземноморские растения для контраста фактур`,
+          `Обустроили зону барбекю с декоративным озеленением`,
+        ],
+        result: `За 6 недель участок превратился из «заброшенного» в один из лучших ухоженных садов на улице — соседи и агент по недвижимости теперь рекомендуют нас новым покупателям в этом районе.`,
+      },
+      {
+        image: 'images/case-sotogrande-after.jpg',
+        tags: ['Обслуживание поместья', '1500 м²'],
+        title: 'Residencia Sotogrande',
+        location: 'Сотогранде · Постоянно',
+        challenge: `Владелец крупной резиденции (1500 м² территории, включая сад, газон, оливковую рощу и бассейн) хотел найти одного надёжного подрядчика на постоянной основе взамен нескольких разрозненных бригад.`,
+        steps: [
+          `Разработали единый годовой план ухода, включающий стрижку, полив, подкормку, обрезку и сезонную посадку`,
+          `Централизовали управление поливом в единой автоматизированной системе`,
+          `Ввели ежемесячную отчётность с фотофиксацией состояния территории`,
+          `Закрепили за объектом постоянную бригаду садовников`,
+        ],
+        result: `Теперь поместье круглый год обслуживается по единому, прозрачному стандарту ухода с полной отчётностью для владельца каждый месяц.`,
+      },
+    ],
+    es: [
+      {
+        image: 'images/case-cancelada-after.jpg',
+        tags: ['Jardín en terraza', 'Muro verde'],
+        title: 'Ático Cancelada',
+        location: 'Cancelada · 2024',
+        challenge: `Una pequeña terraza de 40 m² con vistas al mar necesitaba vegetación sin añadir peso estructural: los límites de carga del edificio descartaban macetas pesadas y tierra abundante.`,
+        steps: [
+          `Seleccionamos macetas cerámicas ligeras y un sustrato especial de bajo peso`,
+          `Creamos un muro verde vertical a lo largo de un lateral de la terraza`,
+          `Plantamos palmeras bajas, suculentas y especies mediterráneas con flor`,
+          `Instalamos riego por goteo con temporizador`,
+        ],
+        result: `La terraza se convirtió en un acogedor oasis verde sin superar el límite de peso permitido por la estructura; el cliente ha contratado desde entonces también el mantenimiento estacional.`,
+      },
+      {
+        image: 'images/case-laquinta-after.jpg',
+        tags: ['Jardín completo', 'Césped nuevo'],
+        title: 'Villa La Quinta',
+        location: 'La Quinta · 2024',
+        challenge: `El propietario de una villa recién construida acudió a nosotros justo tras finalizar la obra: la parcela de 850 m² era un solar desnudo con desnivel irregular y suelo pedregoso.`,
+        steps: [
+          `Realizamos un análisis del suelo y diseñamos un plan de drenaje según la pendiente del terreno`,
+          `Suministramos y nivelamos 350 m³ de tierra vegetal fértil`,
+          `Colocamos césped en tepe de una variedad resistente al clima mediterráneo (una mezcla de Bermuda y Paspalum)`,
+          `Instalamos riego automático con sensor de humedad del suelo`,
+          `Plantamos especies mediterráneas —olivos, lavanda, romero, agaves— en las zonas de bajo consumo de agua`,
+          `Rematamos la zona de la piscina con alicatado decorativo y plantas tropicales`,
+        ],
+        result: `Toda la parcela quedó ajardinada y entregada en 5 semanas. El césped arraigó sin una sola calva, y el riego por zonas redujo el consumo de agua en un 30%.`,
+      },
+      {
+        image: 'images/case-sierrablanca-after.jpg',
+        tags: ['Restauración de césped', 'Jardín familiar'],
+        title: 'Villa Sierra Blanca',
+        location: 'Sierra Blanca, Marbella · 2023',
+        challenge: `Un césped de 600 m² afectado por enfermedades fúngicas y zonas desgastadas y pisoteadas: una familia con niños y un perro usaba el jardín intensamente cada día.`,
+        steps: [
+          `Realizamos aireación y escarificado (eliminación del fieltro) del césped existente`,
+          `Sustituimos la capa superior de tierra en las zonas más afectadas`,
+          `Colocamos césped nuevo en tepe de una variedad resistente al desgaste`,
+          `Establecimos un calendario de riego y fertilización para toda la temporada`,
+          `Formamos al jardinero del cliente en el mantenimiento básico`,
+        ],
+        result: `El césped quedó totalmente restaurado en 10 días. El cliente nos comentó que, por primera vez en tres años, se mantuvo uniformemente verde durante todo el año.`,
+      },
+      {
+        image: 'images/case-calahonda-after.jpg',
+        tags: ['Césped artificial', 'Bajo mantenimiento'],
+        title: 'Villa Calahonda',
+        location: 'Calahonda · 2023',
+        challenge: `Una familia que pasa varios meses del año fuera quería un jardín impecable durante todo el año, sin pagar por riego ni siega (280 m²).`,
+        steps: [
+          `Retiramos el césped antiguo y nivelamos la base`,
+          `Colocamos una capa de drenaje y una base amortiguadora`,
+          `Instalamos césped artificial premium con textura de aspecto natural`,
+          `Rematamos las zonas de transición con piedra decorativa y plantas de bajo mantenimiento`,
+        ],
+        result: `El jardín ahora luce impecable en cualquier estación sin riego ni siega: el cliente redujo su presupuesto anual de mantenimiento del jardín en aproximadamente un 40%.`,
+      },
+      {
+        image: 'images/case-mijascosta-after.jpg',
+        tags: ['Restauración integral', 'Renacimiento del jardín'],
+        title: 'Villa Mijas Costa',
+        location: 'Mijas Costa · 2024',
+        challenge: `Los nuevos propietarios compraron una villa con una parcela de 700 m² que llevaba más de dos años sin mantenimiento: cubierta de maleza, con árboles muertos y un riego que ya no funcionaba.`,
+        steps: [
+          `Limpiamos el terreno de malas hierbas y plantas muertas`,
+          `Podamos y recuperamos los árboles y arbustos sanos`,
+          `Rediseñamos el sistema de riego desde cero`,
+          `Instalamos un césped nuevo y añadimos plantación mediterránea para dar contraste de texturas`,
+          `Construimos una zona de barbacoa con paisajismo decorativo`,
+        ],
+        result: `En 6 semanas la parcela pasó de estar «abandonada» a ser uno de los jardines mejor cuidados de la calle: los vecinos y el agente inmobiliario ahora nos recomiendan a los nuevos compradores de la zona.`,
+      },
+      {
+        image: 'images/case-sotogrande-after.jpg',
+        tags: ['Mantenimiento de finca', '1.500 m²'],
+        title: 'Residencia Sotogrande',
+        location: 'Sotogrande · Continuo',
+        challenge: `El propietario de una gran residencia (1.500 m² de terreno, incluyendo jardín, césped, olivar y piscina) quería un único contratista de confianza de forma permanente, en lugar de varios equipos independientes.`,
+        steps: [
+          `Elaboramos un único plan de cuidado anual que abarca siega, riego, abonado, poda y plantación estacional`,
+          `Centralizamos el control del riego en un único sistema automatizado`,
+          `Implantamos informes mensuales con documentación fotográfica del terreno`,
+          `Asignamos un equipo de jardinería dedicado a la propiedad`,
+        ],
+        result: `La finca funciona ahora bajo un único estándar de cuidado, unificado y responsable, durante todo el año, con total visibilidad para el propietario cada mes.`,
+      },
+    ],
+  };
 
   // cursor-following "view case" badge
   const caseFollow = document.getElementById('caseFollow');
@@ -1179,10 +1723,12 @@
   const caseModalSteps = document.getElementById('caseModalSteps');
   const caseModalResult = document.getElementById('caseModalResult');
   const checkIcon = '<svg class="shrink-0 mt-1" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>';
+  let lastOpenedCase = null;
 
   function openCaseModal(i) {
-    const c = CASE_STUDIES[i];
+    const c = CASE_STUDIES[currentLang][i];
     if (!c) return;
+    lastOpenedCase = i;
     caseModalImage.src = c.image;
     caseModalImage.alt = c.title;
     caseModalTags.innerHTML = c.tags.map(t => `<span class="pill">${t}</span>`).join('');
