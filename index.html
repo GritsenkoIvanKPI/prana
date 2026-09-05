@@ -169,6 +169,40 @@
   .compare .img-after{ opacity:1; }
   .compare[data-state="before"] .img-before{ opacity:1; }
   .compare[data-state="before"] .img-after{ opacity:0; }
+  .case-trigger{ cursor: none; }
+  .case-trigger .toggle-compare{ cursor: pointer; }
+
+  /* cursor-following "view case" badge */
+  .case-follow{
+    position: fixed; top:0; left:0; z-index:55; pointer-events:none;
+    display: flex; align-items:center; gap:.5rem;
+    padding: .7rem 1.2rem .7rem 1.35rem; border-radius: 999px;
+    background: rgba(245,242,232,.96); color:#0a130d;
+    font-size: .82rem; font-weight: 500; white-space: nowrap;
+    box-shadow: 0 20px 40px -14px rgba(0,0,0,.5);
+    opacity: 0; transform: translate(-50%,-50%) scale(.85);
+    transition: opacity .25s ease, transform .35s cubic-bezier(.16,1,.3,1);
+  }
+  .case-follow.visible{ opacity:1; transform: translate(-50%,-50%) scale(1); }
+
+  /* case study modal */
+  .case-modal{ position: fixed; inset:0; z-index:80; display:flex; align-items:center; justify-content:center; padding: 1.25rem; opacity:0; visibility:hidden; transition: opacity .35s ease, visibility .35s; }
+  .case-modal.open{ opacity:1; visibility:visible; }
+  .case-modal-backdrop{ position:absolute; inset:0; background: rgba(6,12,8,.8); backdrop-filter: blur(6px); }
+  .case-modal-panel{
+    position:relative; width:100%; max-width: 640px; max-height: 88vh; overflow-y:auto;
+    background: #0f1c13; border:1px solid rgba(245,242,232,.12); border-radius: 1.1rem;
+    transform: translateY(24px) scale(.98); transition: transform .4s cubic-bezier(.16,1,.3,1);
+  }
+  .case-modal.open .case-modal-panel{ transform: translateY(0) scale(1); }
+  .case-modal-close{
+    position:absolute; top:1rem; right:1rem; z-index:5; width:2.25rem; height:2.25rem; border-radius:999px;
+    display:flex; align-items:center; justify-content:center;
+    background: rgba(10,19,13,.55); color:#f5f2e8; backdrop-filter: blur(4px);
+    transition: background-color .3s ease, transform .3s ease;
+  }
+  .case-modal-close:hover{ background: rgba(198,161,91,.85); color:#0a130d; transform: rotate(90deg); }
+  .case-modal-steps li{ display:flex; gap:.65rem; align-items:flex-start; }
 
   /* accordion */
   .acc-panel{ max-height:0; overflow:hidden; transition: max-height .5s cubic-bezier(.16,1,.3,1), opacity .4s ease; opacity:0; }
@@ -388,7 +422,7 @@
         <p class="reveal eyebrow mb-5">Portfolio</p>
         <h2 class="reveal reveal-d1 heading-tight text-3xl md:text-[2.75rem] font-semibold max-w-xl">Selected transformations</h2>
       </div>
-      <p class="reveal reveal-d2 max-w-sm text-prana-dim leading-[1.7] text-[15px]">Scroll to move through each project. Use the toggle to see the site before PRANA began work.</p>
+      <p class="reveal reveal-d2 max-w-sm text-prana-dim leading-[1.7] text-[15px]">Scroll to move through each project, hover for the full case study, or use the toggle to see the site before PRANA began work.</p>
     </div>
   </div>
 
@@ -397,7 +431,7 @@
     <!-- case 1 -->
     <div class="stack-item relative h-[140vh]">
     <article class="stack-panel sticky top-0 h-[100svh] w-full overflow-hidden" style="z-index:1">
-      <div class="compare absolute inset-0 bg-prana-bg" data-state="after">
+      <div class="compare case-trigger absolute inset-0 bg-prana-bg" data-state="after" data-case="0">
         <img class="img-before" src="images/case-cancelada-before.jpg" alt="Apartment terrace in Cancelada before landscaping — bare concrete, sea view">
         <img class="img-after" src="images/case-cancelada-after.jpg" alt="Apartment terrace in Cancelada after landscaping — living wall and lightweight planting">
         <div class="absolute inset-0 bg-gradient-to-t from-prana-bg/95 via-prana-bg/10 to-transparent pointer-events-none"></div>
@@ -419,7 +453,7 @@
     <!-- case 2 -->
     <div class="stack-item relative h-[140vh]">
     <article class="stack-panel sticky top-0 h-[100svh] w-full overflow-hidden" style="z-index:2">
-      <div class="compare absolute inset-0 bg-prana-bg" data-state="after">
+      <div class="compare case-trigger absolute inset-0 bg-prana-bg" data-state="after" data-case="1">
         <img class="img-before" src="images/case-laquinta-before.jpg" alt="Villa plot in La Quinta before landscaping — bare sloped construction site">
         <img class="img-after" src="images/case-laquinta-after.jpg" alt="Villa plot in La Quinta after landscaping — full garden, lawn and pool terrace">
         <div class="absolute inset-0 bg-gradient-to-t from-prana-bg/95 via-prana-bg/10 to-transparent pointer-events-none"></div>
@@ -441,7 +475,7 @@
     <!-- case 3 -->
     <div class="stack-item relative h-[140vh]">
     <article class="stack-panel sticky top-0 h-[100svh] w-full overflow-hidden" style="z-index:3">
-      <div class="compare absolute inset-0 bg-prana-bg" data-state="after">
+      <div class="compare case-trigger absolute inset-0 bg-prana-bg" data-state="after" data-case="2">
         <img class="img-before" src="images/case-sierrablanca-before.jpg" alt="Villa lawn in Sierra Blanca before restoration — worn, diseased patches">
         <img class="img-after" src="images/case-sierrablanca-after.jpg" alt="Villa lawn in Sierra Blanca after restoration — dense even green grass">
         <div class="absolute inset-0 bg-gradient-to-t from-prana-bg/95 via-prana-bg/10 to-transparent pointer-events-none"></div>
@@ -463,7 +497,7 @@
     <!-- case 4 -->
     <div class="stack-item relative h-[140vh]">
     <article class="stack-panel sticky top-0 h-[100svh] w-full overflow-hidden" style="z-index:4">
-      <div class="compare absolute inset-0 bg-prana-bg" data-state="after">
+      <div class="compare case-trigger absolute inset-0 bg-prana-bg" data-state="after" data-case="3">
         <img class="img-before" src="images/case-calahonda-before.jpg" alt="Villa backyard in Calahonda before landscaping — tired patchy natural lawn">
         <img class="img-after" src="images/case-calahonda-after.jpg" alt="Villa backyard in Calahonda after landscaping — premium artificial turf">
         <div class="absolute inset-0 bg-gradient-to-t from-prana-bg/95 via-prana-bg/10 to-transparent pointer-events-none"></div>
@@ -485,7 +519,7 @@
     <!-- case 5 -->
     <div class="stack-item relative h-[140vh]">
     <article class="stack-panel sticky top-0 h-[100svh] w-full overflow-hidden" style="z-index:5">
-      <div class="compare absolute inset-0 bg-prana-bg" data-state="after">
+      <div class="compare case-trigger absolute inset-0 bg-prana-bg" data-state="after" data-case="4">
         <img class="img-before" src="images/case-mijascosta-before.jpg" alt="Villa garden in Mijas Costa before restoration — overgrown and neglected">
         <img class="img-after" src="images/case-mijascosta-after.jpg" alt="Villa garden in Mijas Costa after restoration — full garden with barbecue area">
         <div class="absolute inset-0 bg-gradient-to-t from-prana-bg/95 via-prana-bg/10 to-transparent pointer-events-none"></div>
@@ -507,7 +541,7 @@
     <!-- case 6 -->
     <div class="stack-item relative h-[140vh]">
     <article class="stack-panel sticky top-0 h-[100svh] w-full overflow-hidden" style="z-index:6">
-      <div class="compare absolute inset-0 bg-prana-bg" data-state="after">
+      <div class="compare case-trigger absolute inset-0 bg-prana-bg" data-state="after" data-case="5">
         <img class="img-before" src="images/case-sotogrande-before.jpg" alt="Sotogrande estate grounds before PRANA maintenance — inconsistent upkeep">
         <img class="img-after" src="images/case-sotogrande-after.jpg" alt="Sotogrande estate grounds after PRANA maintenance — impeccable lawn, olive grove and pool">
         <div class="absolute inset-0 bg-gradient-to-t from-prana-bg/95 via-prana-bg/10 to-transparent pointer-events-none"></div>
@@ -528,6 +562,41 @@
 
   </div>
 </section>
+
+<!-- cursor-following "view case" badge -->
+<div id="caseFollow" class="case-follow">
+  <span>View Case</span>
+  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+</div>
+
+<!-- case study detail modal -->
+<div id="caseModal" class="case-modal" aria-hidden="true">
+  <div id="caseModalBackdrop" class="case-modal-backdrop"></div>
+  <div class="case-modal-panel" role="dialog" aria-modal="true" aria-labelledby="caseModalTitle">
+    <button id="caseModalClose" class="case-modal-close" aria-label="Close case study">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <div class="aspect-[16/10] w-full overflow-hidden">
+      <img id="caseModalImage" src="" alt="" class="w-full h-full object-cover">
+    </div>
+    <div class="p-7 md:p-10">
+      <div id="caseModalTags" class="flex flex-wrap gap-2 mb-4"></div>
+      <h3 id="caseModalTitle" class="text-2xl md:text-3xl font-semibold heading-tight"></h3>
+      <p id="caseModalLocation" class="mt-1 text-prana-faint"></p>
+
+      <p class="eyebrow mt-8">The Challenge</p>
+      <p id="caseModalChallenge" class="mt-3 text-prana-dim leading-[1.7]"></p>
+
+      <p class="eyebrow mt-8">What We Did</p>
+      <ul id="caseModalSteps" class="mt-3 space-y-3 text-prana-dim"></ul>
+
+      <div class="mt-8 rounded-xl border border-prana-gold/30 bg-prana-gold/[0.06] p-6">
+        <p class="eyebrow">The Result</p>
+        <p id="caseModalResult" class="mt-3 text-prana-ink leading-[1.7]"></p>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ============ SERVICES ============ -->
 <section id="services" class="relative py-28 md:py-36">
@@ -1002,7 +1071,8 @@
 
   // before / after toggle
   document.querySelectorAll('.toggle-compare').forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const wrap = btn.closest('.compare');
       const badge = wrap.querySelector('.state-badge');
       const showingAfter = wrap.dataset.state !== 'before';
@@ -1011,6 +1081,161 @@
       badge.textContent = showingAfter ? 'Before' : 'After';
     });
   });
+
+  // case study data + cursor-follow badge + detail modal
+  const CASE_STUDIES = [
+    {
+      image: 'images/case-cancelada-after.jpg',
+      tags: ['Terrace Garden', 'Living Wall'],
+      title: 'Ático Cancelada',
+      location: 'Cancelada · 2024',
+      challenge: 'A small 40m² terrace apartment with sea views needed greenery without adding structural weight — the building’s load limits ruled out heavy planters and soil.',
+      steps: [
+        'Selected lightweight ceramic planters and a specialised lightweight growing medium',
+        'Created a vertical living wall along one side of the terrace',
+        'Planted low palms, succulents and flowering Mediterranean species',
+        'Installed timer-controlled drip irrigation',
+      ],
+      result: 'The terrace became a cozy green oasis while staying safely within the structure’s weight allowance — the client has since signed on for seasonal maintenance too.',
+    },
+    {
+      image: 'images/case-laquinta-after.jpg',
+      tags: ['Full Garden', 'New Lawn'],
+      title: 'Villa La Quinta',
+      location: 'La Quinta · 2024',
+      challenge: 'The owner of a newly built villa came to us straight after construction finished — the 850m² plot was a bare building site with uneven grade and rocky soil.',
+      steps: [
+        'Carried out a soil analysis and designed a drainage plan around the site’s slope',
+        'Delivered and graded 350m³ of fertile topsoil',
+        'Laid rolled turf in a Mediterranean-climate-hardy variety (a Bermuda/Paspalum blend)',
+        'Installed automatic irrigation with a soil-moisture sensor',
+        'Planted Mediterranean species — olives, lavender, rosemary, agaves — in the low-water zones',
+        'Finished the pool area with decorative tiling and tropical planting',
+      ],
+      result: 'The whole plot was landscaped and handed over in 5 weeks. The lawn established without a single bald patch, and zoned irrigation cut water use by 30%.',
+    },
+    {
+      image: 'images/case-sierrablanca-after.jpg',
+      tags: ['Lawn Restoration', 'Family Garden'],
+      title: 'Villa Sierra Blanca',
+      location: 'Sierra Blanca, Marbella · 2023',
+      challenge: 'A 600m² lawn suffering from fungal disease and worn, trampled patches — a family with children and a dog used the grounds heavily every day.',
+      steps: [
+        'Aerated and scarified (dethatched) the existing lawn',
+        'Replaced the topsoil in the worst-affected areas',
+        'Laid new rolled turf in a wear-resistant variety',
+        'Set a season-long watering and fertilising schedule',
+        'Trained the client’s own gardener in basic upkeep',
+      ],
+      result: 'The lawn was fully restored in 10 days. The client told us that for the first time in three years, it stayed evenly green all year round.',
+    },
+    {
+      image: 'images/case-calahonda-after.jpg',
+      tags: ['Artificial Turf', 'Low Maintenance'],
+      title: 'Villa Calahonda',
+      location: 'Calahonda · 2023',
+      challenge: 'A family who spend several months of the year away wanted a garden that looked immaculate year-round, without paying for watering or mowing (280m²).',
+      steps: [
+        'Removed the old lawn and levelled the base',
+        'Laid a drainage layer and shock-pad underlay',
+        'Installed a premium artificial turf with a natural-looking texture',
+        'Finished the transition zones with decorative stone and low-maintenance planting',
+      ],
+      result: 'The garden now looks flawless in every season with no watering or mowing — the client cut their annual garden maintenance budget by roughly 40%.',
+    },
+    {
+      image: 'images/case-mijascosta-after.jpg',
+      tags: ['Full Restoration', 'Garden Revival'],
+      title: 'Villa Mijas Costa',
+      location: 'Mijas Costa · 2024',
+      challenge: 'The new owners bought a villa with a 700m² plot that had gone unmaintained for over two years — overgrown, with dead trees and irrigation that no longer worked.',
+      steps: [
+        'Cleared the site of weeds and dead planting',
+        'Pruned and revived the healthy trees and shrubs',
+        'Redesigned the irrigation system from scratch',
+        'Laid a new lawn and added Mediterranean planting for textural contrast',
+        'Built a barbecue area with decorative landscaping',
+      ],
+      result: 'In 6 weeks the plot went from "abandoned" to one of the best-kept gardens on the street — neighbours and the estate agent now recommend us to new buyers in the area.',
+    },
+    {
+      image: 'images/case-sotogrande-after.jpg',
+      tags: ['Estate Maintenance', '1,500m²'],
+      title: 'Residencia Sotogrande',
+      location: 'Sotogrande · Ongoing',
+      challenge: 'The owner of a large residence (1,500m² of grounds, including garden, lawn, an olive grove and a pool) wanted one reliable contractor on a permanent basis, replacing several disconnected crews.',
+      steps: [
+        'Built a single annual care plan covering mowing, watering, feeding, pruning and seasonal planting',
+        'Centralised irrigation control into one automated system',
+        'Introduced monthly reporting with photo documentation of the grounds',
+        'Assigned a dedicated gardening crew to the property',
+      ],
+      result: 'The estate now runs under one unified, accountable standard of care year-round, with full visibility for the owner every month.',
+    },
+  ];
+
+  // cursor-following "view case" badge
+  const caseFollow = document.getElementById('caseFollow');
+  const followPos = { x: 0, y: 0 };
+  const followTarget = { x: 0, y: 0 };
+  let followRAF = null;
+  const animateFollow = () => {
+    followPos.x += (followTarget.x - followPos.x) * 0.18;
+    followPos.y += (followTarget.y - followPos.y) * 0.18;
+    caseFollow.style.transform = `translate(${followPos.x}px, ${followPos.y}px) translate(-50%,-50%)`;
+    followRAF = requestAnimationFrame(animateFollow);
+  };
+  document.querySelectorAll('.case-trigger').forEach(el => {
+    el.addEventListener('mouseenter', (e) => {
+      followTarget.x = e.clientX; followTarget.y = e.clientY;
+      followPos.x = e.clientX; followPos.y = e.clientY;
+      caseFollow.classList.add('visible');
+      if (!followRAF) animateFollow();
+    });
+    el.addEventListener('mousemove', (e) => {
+      followTarget.x = e.clientX; followTarget.y = e.clientY;
+    });
+    el.addEventListener('mouseleave', () => {
+      caseFollow.classList.remove('visible');
+    });
+    el.addEventListener('click', () => openCaseModal(parseInt(el.dataset.case, 10)));
+  });
+
+  // case study modal
+  const caseModal = document.getElementById('caseModal');
+  const caseModalImage = document.getElementById('caseModalImage');
+  const caseModalTags = document.getElementById('caseModalTags');
+  const caseModalTitle = document.getElementById('caseModalTitle');
+  const caseModalLocation = document.getElementById('caseModalLocation');
+  const caseModalChallenge = document.getElementById('caseModalChallenge');
+  const caseModalSteps = document.getElementById('caseModalSteps');
+  const caseModalResult = document.getElementById('caseModalResult');
+  const checkIcon = '<svg class="shrink-0 mt-1" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>';
+
+  function openCaseModal(i) {
+    const c = CASE_STUDIES[i];
+    if (!c) return;
+    caseModalImage.src = c.image;
+    caseModalImage.alt = c.title;
+    caseModalTags.innerHTML = c.tags.map(t => `<span class="pill">${t}</span>`).join('');
+    caseModalTitle.textContent = c.title;
+    caseModalLocation.textContent = c.location;
+    caseModalChallenge.textContent = c.challenge;
+    caseModalSteps.innerHTML = c.steps.map(s => `<li>${checkIcon}<span>${s}</span></li>`).join('');
+    caseModalResult.textContent = c.result;
+    caseModal.classList.add('open');
+    caseModal.setAttribute('aria-hidden', 'false');
+    caseFollow.classList.remove('visible');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCaseModal() {
+    caseModal.classList.remove('open');
+    caseModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('caseModalClose').addEventListener('click', closeCaseModal);
+  document.getElementById('caseModalBackdrop').addEventListener('click', closeCaseModal);
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeCaseModal(); });
 
   // accordion
   document.querySelectorAll('.acc-item').forEach(item => {
