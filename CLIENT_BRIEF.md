@@ -46,5 +46,15 @@ Adapted brand palette: deep dark green (near-black-green) replacing neutral blac
 ## Images
 All photography generated via Gemini (gemini-3-pro-image-preview) per GEMINI_IMAGE_GENERATION.md — Mediterranean/Andalusian gardens, villas, pools, lawns, irrigation, team portraits. No stock/placeholder images where a generated photo is feasible.
 
+## Portfolio case studies (real, client-provided)
+Six real case studies (originally supplied in Russian, translated/shortened for the site), each with a before/after image pair:
+1. Ático Cancelada — 40m² sea-view terrace, lightweight planters + living wall due to weight limits
+2. Villa La Quinta — 850m² bare plot to full garden + lawn in 5 weeks, -30% water use
+3. Villa Sierra Blanca (Marbella) — 600m² family lawn restored from disease/wear in 10 days
+4. Villa Calahonda — 280m² natural lawn replaced with artificial turf, -40% upkeep cost
+5. Villa Mijas Costa — 700m² garden neglected 2+ years, revived in 6 weeks
+6. Residencia Sotogrande — 1,500m² estate, ongoing annual maintenance contract (not a one-off transformation)
+Full original task/action/result detail lives in the conversation history; site copy is intentionally condensed to fit the portfolio panel's minimal overlay format.
+
 ## Output
 Single `index.html`, Tailwind via CDN, all styles inline/embedded, mobile-first, served from localhost via serve.mjs, verified via screenshot.mjs against the reference (2+ comparison rounds).
