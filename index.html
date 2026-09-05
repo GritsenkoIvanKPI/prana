@@ -156,12 +156,6 @@
   /* before/after compare */
   .compare{ overflow:hidden; }
 
-  /* portfolio pinned stack */
-  .stack-panel{ will-change: transform, filter; transform-origin: center top; }
-  .stack-panel:not(:first-child)::before{
-    content:''; position:absolute; inset:0 0 auto 0; height:140px; z-index:6; pointer-events:none;
-    background: linear-gradient(to bottom, rgba(0,0,0,.65), rgba(0,0,0,0));
-  }
   .compare img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition: opacity .6s cubic-bezier(.16,1,.3,1); }
   .compare .img-before{ opacity:0; }
   .compare .img-after{ opacity:1; }
@@ -424,18 +418,16 @@
     </div>
   </div>
 
-  <div class="stack-wrap relative">
+  <div class="max-w-[1400px] mx-auto px-6 md:px-10 space-y-8 md:space-y-10">
 
     <!-- case 1 -->
-    <div class="stack-item relative h-[140vh]">
-    <article class="stack-panel sticky top-0 h-[100svh] w-full overflow-hidden" style="z-index:1">
-      <div class="compare case-trigger absolute inset-0 bg-prana-bg" data-state="after" data-case="0">
+    <article class="reveal card-lift compare case-trigger relative h-[500px] sm:h-[540px] md:h-[620px] w-full overflow-hidden rounded-[2rem] border border-white/10 bg-prana-bg" data-state="after" data-case="0">
         <img class="img-before" src="images/case-cancelada-before.jpg" alt="Apartment terrace in Cancelada before landscaping — bare concrete, sea view">
         <img class="img-after" src="images/case-cancelada-after.jpg" alt="Apartment terrace in Cancelada after landscaping — living wall and lightweight planting">
         <div class="absolute inset-0 bg-gradient-to-t from-prana-bg/95 via-prana-bg/10 to-transparent pointer-events-none"></div>
-        <button class="toggle-compare absolute bottom-8 right-6 md:right-10 z-10 btn btn-primary btn-sm">View Before</button>
-        <span class="state-badge absolute top-24 left-6 md:left-10 z-10 pill">After</span>
-        <div class="absolute bottom-10 md:bottom-14 left-6 md:left-10 right-6 md:right-10 md:max-w-xl">
+        <button class="toggle-compare absolute top-6 right-6 md:right-8 z-10 btn btn-primary btn-sm">View Before</button>
+        <span class="state-badge absolute top-6 left-6 md:left-8 z-10 pill">After</span>
+        <div class="absolute bottom-6 md:bottom-10 left-6 md:left-8 right-6 md:right-8 max-w-sm md:max-w-lg">
           <div class="flex flex-wrap gap-2 mb-4">
             <span class="pill">Terrace Garden</span>
             <span class="pill">Living Wall</span>
@@ -446,18 +438,15 @@
         </div>
       </div>
     </article>
-    </div>
 
     <!-- case 2 -->
-    <div class="stack-item relative h-[140vh]">
-    <article class="stack-panel sticky top-0 h-[100svh] w-full overflow-hidden" style="z-index:2">
-      <div class="compare case-trigger absolute inset-0 bg-prana-bg" data-state="after" data-case="1">
+    <article class="reveal card-lift compare case-trigger relative h-[500px] sm:h-[540px] md:h-[620px] w-full overflow-hidden rounded-[2rem] border border-white/10 bg-prana-bg" data-state="after" data-case="1">
         <img class="img-before" src="images/case-laquinta-before.jpg" alt="Villa plot in La Quinta before landscaping — bare sloped construction site">
         <img class="img-after" src="images/case-laquinta-after.jpg" alt="Villa plot in La Quinta after landscaping — full garden, lawn and pool terrace">
         <div class="absolute inset-0 bg-gradient-to-t from-prana-bg/95 via-prana-bg/10 to-transparent pointer-events-none"></div>
-        <button class="toggle-compare absolute bottom-8 right-6 md:right-10 z-10 btn btn-primary btn-sm">View Before</button>
-        <span class="state-badge absolute top-24 left-6 md:left-10 z-10 pill">After</span>
-        <div class="absolute bottom-10 md:bottom-14 left-6 md:left-10 right-6 md:right-10 md:max-w-xl">
+        <button class="toggle-compare absolute top-6 right-6 md:right-8 z-10 btn btn-primary btn-sm">View Before</button>
+        <span class="state-badge absolute top-6 left-6 md:left-8 z-10 pill">After</span>
+        <div class="absolute bottom-6 md:bottom-10 left-6 md:left-8 right-6 md:right-8 max-w-sm md:max-w-lg">
           <div class="flex flex-wrap gap-2 mb-4">
             <span class="pill">Full Garden</span>
             <span class="pill">New Lawn</span>
@@ -468,18 +457,15 @@
         </div>
       </div>
     </article>
-    </div>
 
     <!-- case 3 -->
-    <div class="stack-item relative h-[140vh]">
-    <article class="stack-panel sticky top-0 h-[100svh] w-full overflow-hidden" style="z-index:3">
-      <div class="compare case-trigger absolute inset-0 bg-prana-bg" data-state="after" data-case="2">
+    <article class="reveal card-lift compare case-trigger relative h-[500px] sm:h-[540px] md:h-[620px] w-full overflow-hidden rounded-[2rem] border border-white/10 bg-prana-bg" data-state="after" data-case="2">
         <img class="img-before" src="images/case-sierrablanca-before.jpg" alt="Villa lawn in Sierra Blanca before restoration — worn, diseased patches">
         <img class="img-after" src="images/case-sierrablanca-after.jpg" alt="Villa lawn in Sierra Blanca after restoration — dense even green grass">
         <div class="absolute inset-0 bg-gradient-to-t from-prana-bg/95 via-prana-bg/10 to-transparent pointer-events-none"></div>
-        <button class="toggle-compare absolute bottom-8 right-6 md:right-10 z-10 btn btn-primary btn-sm">View Before</button>
-        <span class="state-badge absolute top-24 left-6 md:left-10 z-10 pill">After</span>
-        <div class="absolute bottom-10 md:bottom-14 left-6 md:left-10 right-6 md:right-10 md:max-w-xl">
+        <button class="toggle-compare absolute top-6 right-6 md:right-8 z-10 btn btn-primary btn-sm">View Before</button>
+        <span class="state-badge absolute top-6 left-6 md:left-8 z-10 pill">After</span>
+        <div class="absolute bottom-6 md:bottom-10 left-6 md:left-8 right-6 md:right-8 max-w-sm md:max-w-lg">
           <div class="flex flex-wrap gap-2 mb-4">
             <span class="pill">Lawn Restoration</span>
             <span class="pill">Family Garden</span>
@@ -490,18 +476,15 @@
         </div>
       </div>
     </article>
-    </div>
 
     <!-- case 4 -->
-    <div class="stack-item relative h-[140vh]">
-    <article class="stack-panel sticky top-0 h-[100svh] w-full overflow-hidden" style="z-index:4">
-      <div class="compare case-trigger absolute inset-0 bg-prana-bg" data-state="after" data-case="3">
+    <article class="reveal card-lift compare case-trigger relative h-[500px] sm:h-[540px] md:h-[620px] w-full overflow-hidden rounded-[2rem] border border-white/10 bg-prana-bg" data-state="after" data-case="3">
         <img class="img-before" src="images/case-calahonda-before.jpg" alt="Villa backyard in Calahonda before landscaping — tired patchy natural lawn">
         <img class="img-after" src="images/case-calahonda-after.jpg" alt="Villa backyard in Calahonda after landscaping — premium artificial turf">
         <div class="absolute inset-0 bg-gradient-to-t from-prana-bg/95 via-prana-bg/10 to-transparent pointer-events-none"></div>
-        <button class="toggle-compare absolute bottom-8 right-6 md:right-10 z-10 btn btn-primary btn-sm">View Before</button>
-        <span class="state-badge absolute top-24 left-6 md:left-10 z-10 pill">After</span>
-        <div class="absolute bottom-10 md:bottom-14 left-6 md:left-10 right-6 md:right-10 md:max-w-xl">
+        <button class="toggle-compare absolute top-6 right-6 md:right-8 z-10 btn btn-primary btn-sm">View Before</button>
+        <span class="state-badge absolute top-6 left-6 md:left-8 z-10 pill">After</span>
+        <div class="absolute bottom-6 md:bottom-10 left-6 md:left-8 right-6 md:right-8 max-w-sm md:max-w-lg">
           <div class="flex flex-wrap gap-2 mb-4">
             <span class="pill">Artificial Turf</span>
             <span class="pill">Low Maintenance</span>
@@ -512,18 +495,15 @@
         </div>
       </div>
     </article>
-    </div>
 
     <!-- case 5 -->
-    <div class="stack-item relative h-[140vh]">
-    <article class="stack-panel sticky top-0 h-[100svh] w-full overflow-hidden" style="z-index:5">
-      <div class="compare case-trigger absolute inset-0 bg-prana-bg" data-state="after" data-case="4">
+    <article class="reveal card-lift compare case-trigger relative h-[500px] sm:h-[540px] md:h-[620px] w-full overflow-hidden rounded-[2rem] border border-white/10 bg-prana-bg" data-state="after" data-case="4">
         <img class="img-before" src="images/case-mijascosta-before.jpg" alt="Villa garden in Mijas Costa before restoration — overgrown and neglected">
         <img class="img-after" src="images/case-mijascosta-after.jpg" alt="Villa garden in Mijas Costa after restoration — full garden with barbecue area">
         <div class="absolute inset-0 bg-gradient-to-t from-prana-bg/95 via-prana-bg/10 to-transparent pointer-events-none"></div>
-        <button class="toggle-compare absolute bottom-8 right-6 md:right-10 z-10 btn btn-primary btn-sm">View Before</button>
-        <span class="state-badge absolute top-24 left-6 md:left-10 z-10 pill">After</span>
-        <div class="absolute bottom-10 md:bottom-14 left-6 md:left-10 right-6 md:right-10 md:max-w-xl">
+        <button class="toggle-compare absolute top-6 right-6 md:right-8 z-10 btn btn-primary btn-sm">View Before</button>
+        <span class="state-badge absolute top-6 left-6 md:left-8 z-10 pill">After</span>
+        <div class="absolute bottom-6 md:bottom-10 left-6 md:left-8 right-6 md:right-8 max-w-sm md:max-w-lg">
           <div class="flex flex-wrap gap-2 mb-4">
             <span class="pill">Full Restoration</span>
             <span class="pill">Garden Revival</span>
@@ -534,18 +514,15 @@
         </div>
       </div>
     </article>
-    </div>
 
     <!-- case 6 -->
-    <div class="stack-item relative h-[140vh]">
-    <article class="stack-panel sticky top-0 h-[100svh] w-full overflow-hidden" style="z-index:6">
-      <div class="compare case-trigger absolute inset-0 bg-prana-bg" data-state="after" data-case="5">
+    <article class="reveal card-lift compare case-trigger relative h-[500px] sm:h-[540px] md:h-[620px] w-full overflow-hidden rounded-[2rem] border border-white/10 bg-prana-bg" data-state="after" data-case="5">
         <img class="img-before" src="images/case-sotogrande-before.jpg" alt="Sotogrande estate grounds before PRANA maintenance — inconsistent upkeep">
         <img class="img-after" src="images/case-sotogrande-after.jpg" alt="Sotogrande estate grounds after PRANA maintenance — impeccable lawn, olive grove and pool">
         <div class="absolute inset-0 bg-gradient-to-t from-prana-bg/95 via-prana-bg/10 to-transparent pointer-events-none"></div>
-        <button class="toggle-compare absolute bottom-8 right-6 md:right-10 z-10 btn btn-primary btn-sm">View Before</button>
-        <span class="state-badge absolute top-24 left-6 md:left-10 z-10 pill">After</span>
-        <div class="absolute bottom-10 md:bottom-14 left-6 md:left-10 right-6 md:right-10 md:max-w-xl">
+        <button class="toggle-compare absolute top-6 right-6 md:right-8 z-10 btn btn-primary btn-sm">View Before</button>
+        <span class="state-badge absolute top-6 left-6 md:left-8 z-10 pill">After</span>
+        <div class="absolute bottom-6 md:bottom-10 left-6 md:left-8 right-6 md:right-8 max-w-sm md:max-w-lg">
           <div class="flex flex-wrap gap-2 mb-4">
             <span class="pill">Estate Maintenance</span>
             <span class="pill">1,500m²</span>
@@ -556,7 +533,6 @@
         </div>
       </div>
     </article>
-    </div>
 
   </div>
 </section>
@@ -1253,33 +1229,6 @@
     document.getElementById('formNote').classList.remove('hidden');
     e.target.reset();
   });
-
-  // portfolio pinned-stack "flip through" effect: as the next panel slides up
-  // and covers the current one, ease the current panel back slightly (scale +
-  // dim) so the transition reads as one image being drawn over another.
-  const stackPanels = [...document.querySelectorAll('.stack-panel')];
-  if (stackPanels.length) {
-    let ticking = false;
-    const updateStack = () => {
-      const vh = window.innerHeight;
-      stackPanels.forEach((panel, i) => {
-        const next = stackPanels[i + 1];
-        let progress = 0;
-        if (next) {
-          const nextTop = next.getBoundingClientRect().top;
-          progress = 1 - Math.min(Math.max(nextTop / vh, 0), 1);
-        }
-        panel.style.transform = `scale(${1 - progress * 0.16})`;
-        panel.style.filter = `brightness(${1 - progress * 0.55}) blur(${progress * 3}px)`;
-      });
-      ticking = false;
-    };
-    window.addEventListener('scroll', () => {
-      if (!ticking) { requestAnimationFrame(updateStack); ticking = true; }
-    }, { passive: true });
-    window.addEventListener('resize', updateStack);
-    updateStack();
-  }
 
   // reveal on scroll
   const io = new IntersectionObserver((entries) => {
