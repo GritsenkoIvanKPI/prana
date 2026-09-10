@@ -226,6 +226,14 @@
   @media (max-width: 767px){
     .heading-tight{ letter-spacing: -0.02em; }
   }
+
+  /* RU/ES hero headline translations run longer than EN — scale down on
+     desktop so the manual <br> in each translation still yields two lines
+     instead of wrapping to three or four. */
+  @media (min-width: 768px){
+    html[lang="ru"] [data-i18n-html="hero.h1"]{ font-size: 2.85rem; line-height: 1.15; }
+    html[lang="es"] [data-i18n-html="hero.h1"]{ font-size: 3.9rem; line-height: 1.08; }
+  }
 </style>
 </head>
 <body class="bg-prana-bg text-prana-ink font-sans antialiased">
@@ -1237,7 +1245,7 @@
       'nav.team': `Команда`, 'nav.faq': `Вопросы`,
       'btn.submitEnquiry': `Оставить заявку`,
       'hero.eyebrow': `Ландшафтная студия Коста-дель-Соль`,
-      'hero.h1': `Самое редкое, что есть на Коста-дель-Соль — это <span class="accent">тишина</span>. Мы её выращиваем.`,
+      'hero.h1': `Самое редкое, что есть на Коста-дель-Соль<br class="hidden md:block"> — это <span class="accent">тишина</span>. Мы её выращиваем.`,
       'hero.sub': `PRANA проектирует, озеленяет и обслуживает исключительные территории в Марбелье, Бенаависе и на всём побережье Коста-дель-Соль — от газонов чемпионского уровня до ландшафтов масштабных поместий.`,
       'btn.viewOurWork': `Наши проекты`,
       'trustedAcross': `Нам доверяют в`,
@@ -1359,7 +1367,7 @@
       'nav.team': `Equipo`, 'nav.faq': `Preguntas`,
       'btn.submitEnquiry': `Enviar consulta`,
       'hero.eyebrow': `Estudio de Paisajismo Costa del Sol`,
-      'hero.h1': `Lo más raro de la Costa del Sol es el <span class="accent">silencio</span>. Nosotros lo cultivamos.`,
+      'hero.h1': `Lo más raro de la Costa del Sol es<br class="hidden md:block"> el <span class="accent">silencio</span>. Nosotros lo cultivamos.`,
       'hero.sub': `PRANA diseña, planta y mantiene espacios exteriores excepcionales en Marbella, Benahavís y toda la Costa del Sol, desde céspedes de nivel profesional hasta paisajismo integral de fincas.`,
       'btn.viewOurWork': `Ver nuestros proyectos`,
       'trustedAcross': `Presentes en`,
