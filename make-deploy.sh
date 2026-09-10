@@ -9,6 +9,10 @@ rm -rf deploy prana-deploy.zip
 mkdir -p deploy
 cp index.html deploy/
 cp send.php deploy/
+cp favicon.ico deploy/
+cp site.webmanifest deploy/
+cp robots.txt deploy/
+cp sitemap.xml deploy/
 cp -R images deploy/
 
 cd deploy

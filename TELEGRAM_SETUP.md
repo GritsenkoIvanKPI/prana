@@ -26,7 +26,8 @@ sh make-deploy.sh
 ```
 
 This creates `prana-deploy.zip` containing **exactly** what belongs on the
-live site: `index.html`, `send.php`, `images/`. Nothing else.
+live site: `index.html`, `send.php`, `favicon.ico`, `site.webmanifest`,
+`robots.txt`, `sitemap.xml`, `images/`. Nothing else.
 
 **Don't upload anything else from this folder.** Webuzo serves whatever sits
 in `public_html` directly by URL — a stray `CLAUDE.md` or `CLIENT_BRIEF.md`
