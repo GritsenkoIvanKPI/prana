@@ -130,12 +130,14 @@
   /* high-emphasis CTA, e.g. the free site-visit panel */
   .btn-cta{
     padding: 1.15rem 2.4rem; font-size: .95rem;
-    background: linear-gradient(135deg, #e4c384, #b5893f);
-    color: #0a130d;
+    /* darkened from the raw brand gold so white text clears WCAG AA (4.5:1)
+       contrast at every point of the gradient, not just the darkest pixel */
+    background: linear-gradient(135deg, #8a6a35, #6b4f24);
+    color: #ffffff;
     box-shadow: 0 10px 30px -8px rgba(198,161,91,.55), 0 2px 10px -2px rgba(0,0,0,.45);
   }
   .btn-cta:hover{
-    background: linear-gradient(135deg, #eecf98, #c6994c);
+    background: linear-gradient(135deg, #8f6f3d, #715526);
     box-shadow: 0 14px 38px -8px rgba(198,161,91,.7), 0 4px 14px -2px rgba(0,0,0,.5);
     transform: translateY(-2px);
   }
