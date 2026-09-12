@@ -127,6 +127,20 @@
   .btn-ghost:focus-visible{ outline: 2px solid #e4c384; outline-offset: 3px; }
   .btn-sm{ padding: .6rem 1.1rem; font-size: .78rem; border-radius: .4rem; }
 
+  /* high-emphasis CTA, e.g. the free site-visit panel */
+  .btn-cta{
+    padding: 1.15rem 2.4rem; font-size: .95rem;
+    background: linear-gradient(135deg, #e4c384, #b5893f);
+    color: #0a130d;
+    box-shadow: 0 10px 30px -8px rgba(198,161,91,.55), 0 2px 10px -2px rgba(0,0,0,.45);
+  }
+  .btn-cta:hover{
+    background: linear-gradient(135deg, #eecf98, #c6994c);
+    box-shadow: 0 14px 38px -8px rgba(198,161,91,.7), 0 4px 14px -2px rgba(0,0,0,.5);
+    transform: translateY(-2px);
+  }
+  .btn-cta:focus-visible{ outline: 2px solid #e4c384; outline-offset: 3px; }
+
   /* pill CTA with a trailing circular icon, used on package cards */
   .btn-pill{
     display: flex; align-items: center; justify-content: space-between; gap: .75rem;
@@ -901,27 +915,35 @@
 <!-- ============ FREE SITE VISIT CTA ============ -->
 <section id="quote" class="relative py-28 md:py-36">
   <div class="max-w-[1400px] mx-auto px-6 md:px-10">
-    <div class="reveal card-lift rounded-2xl border border-prana-gold/30 bg-gradient-to-b from-prana-gold/[0.07] to-prana-floating/50 px-6 py-16 md:px-16 md:py-20 text-center">
-      <p class="reveal eyebrow mb-5 justify-center flex" data-i18n="quotecta.eyebrow">Free Site Visit</p>
-      <h2 class="reveal reveal-d1 heading-tight text-3xl md:text-[2.75rem] md:leading-[1.15] font-light max-w-2xl mx-auto" data-i18n-html="quotecta.h2">We'll visit your property,<br> free of charge</h2>
-      <p class="reveal reveal-d2 mt-6 text-prana-dim leading-[1.75] max-w-xl mx-auto" data-i18n="quotecta.intro">Before you commit to anything, one of our landscape architects walks your site, takes measurements and prepares a detailed, no-obligation quote for your project.</p>
+    <div class="reveal card-lift relative rounded-2xl border border-prana-gold/40 overflow-hidden px-6 py-16 md:px-16 md:py-24 text-center">
+      <img src="images/quote-cta-bg.jpg" alt="Landscape architect reviewing a garden design plan on a tablet with a client at a Costa del Sol villa" class="absolute inset-0 w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-b from-prana-bg/80 via-prana-bg/85 to-prana-bg/92"></div>
 
-      <div class="reveal reveal-d3 mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-sm text-prana-dim">
-        <span class="flex items-center gap-2">
-          <svg class="shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>
-          <span data-i18n="quotecta.f1">On-site measurements</span>
-        </span>
-        <span class="flex items-center gap-2">
-          <svg class="shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>
-          <span data-i18n="quotecta.f2">Tailored design proposal</span>
-        </span>
-        <span class="flex items-center gap-2">
-          <svg class="shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>
-          <span data-i18n="quotecta.f3">No-obligation quote</span>
-        </span>
+      <div class="relative z-10">
+        <p class="reveal eyebrow mb-5 justify-center flex" data-i18n="quotecta.eyebrow">Free Site Visit</p>
+        <h2 class="reveal reveal-d1 heading-tight text-3xl md:text-[2.75rem] md:leading-[1.15] font-light max-w-2xl mx-auto" data-i18n-html="quotecta.h2">We'll visit your property,<br> free of charge</h2>
+        <p class="reveal reveal-d2 mt-6 text-prana-dim leading-[1.75] max-w-xl mx-auto" data-i18n="quotecta.intro">Before you commit to anything, one of our landscape architects walks your site, takes measurements and prepares a detailed, no-obligation quote for your project.</p>
+
+        <div class="reveal reveal-d3 mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-sm text-prana-dim">
+          <span class="flex items-center gap-2">
+            <svg class="shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>
+            <span data-i18n="quotecta.f1">On-site measurements</span>
+          </span>
+          <span class="flex items-center gap-2">
+            <svg class="shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>
+            <span data-i18n="quotecta.f2">Tailored design proposal</span>
+          </span>
+          <span class="flex items-center gap-2">
+            <svg class="shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#c6a15b" stroke-width="2"><path d="m5 13 4 4L19 7"/></svg>
+            <span data-i18n="quotecta.f3">No-obligation quote</span>
+          </span>
+        </div>
+
+        <a href="#contact" class="reveal reveal-d4 inline-flex mt-10 btn btn-cta w-full sm:w-auto">
+          <span data-i18n="btn.bookVisit">Book Your Free Site Visit</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
       </div>
-
-      <a href="#contact" class="reveal reveal-d4 inline-flex mt-10 btn btn-primary w-full sm:w-auto" data-i18n="btn.bookVisit">Book Your Free Site Visit</a>
     </div>
   </div>
 </section>
