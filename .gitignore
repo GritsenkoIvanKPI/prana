@@ -14,6 +14,10 @@ GEMINI_IMAGE_GENERATION.md
 # raw source footage (69MB) — compressed web versions live in images/
 *.MOV
 
+# raw uncropped source photos handed off for a shoot — cropped/compressed
+# copies get placed in images/ under their own descriptive names
+new_photo/
+
 # real Telegram bot token/chat id — copy telegram-config.example.php instead
 telegram-config.php
 
