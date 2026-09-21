@@ -64,6 +64,20 @@ function http_post_json($url, $payload, $timeout = 12) {
     return array($res, $err);
 }
 
+/* Non-secret description of the token's format, for debugging typos. */
+function token_shape($t) {
+    $t = (string)$t;
+    $parts = explode(':', $t, 2);
+    return array(
+        'valid_format'        => (bool)preg_match('/^\\d{6,12}:[A-Za-z0-9_-]{30,40}$/', $t),
+        'digits_before_colon' => strlen($parts[0]),
+        'chars_after_colon'   => isset($parts[1]) ? strlen($parts[1]) : 0,
+        'has_colon'           => strpos($t, ':') !== false,
+        'has_whitespace'      => (bool)preg_match('/\\s/', $t),
+        'has_quote_or_bot'    => (bool)preg_match('/[\'"]|^bot/i', $t),
+    );
+}
+
 /* --- credentials ------------------------------------------------------------
    Loaded first (and before the POST-only check below) so that ?selftest=1
    can report on them with a plain GET request. */
@@ -91,6 +105,7 @@ if (isset($_GET['selftest'])) {
         'config_source'      => $CONFIG_SOURCE,
         'token_present'      => $BOT_TOKEN !== '' && $BOT_TOKEN !== false && $BOT_TOKEN !== null,
         'token_length'       => $BOT_TOKEN ? strlen($BOT_TOKEN) : 0,
+        'token_shape'        => token_shape($BOT_TOKEN),
         'chat_id'            => $CHAT_ID ? $CHAT_ID : null,
         'curl_available'     => function_exists('curl_init'),
         'allow_url_fopen'    => (bool)ini_get('allow_url_fopen'),
