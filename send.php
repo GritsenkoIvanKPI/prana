@@ -29,6 +29,41 @@ function fail($code, $error) {
     exit;
 }
 
+/* --- HTTP helper: uses curl when the extension exists, otherwise falls back
+   to PHP streams (allow_url_fopen) so hosts without curl still work. --------
+   Returns array(body|false, error string). */
+function http_post_json($url, $payload, $timeout = 12) {
+    if (function_exists('curl_init')) {
+        $ch = curl_init($url);
+        curl_setopt_array($ch, array(
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST           => true,
+            CURLOPT_POSTFIELDS     => $payload,
+            CURLOPT_HTTPHEADER     => array('Content-Type: application/json'),
+            CURLOPT_TIMEOUT        => $timeout,
+            CURLOPT_SSL_VERIFYPEER => true,
+            CURLOPT_SSL_VERIFYHOST => 2,
+        ));
+        $res = curl_exec($ch);
+        $err = curl_error($ch);
+        curl_close($ch);
+        return array($res, $err);
+    }
+    $ctx = stream_context_create(array(
+        'http' => array(
+            'method'        => 'POST',
+            'header'        => "Content-Type: application/json\r\n",
+            'content'       => $payload,
+            'timeout'       => $timeout,
+            'ignore_errors' => true,
+        ),
+        'ssl' => array('verify_peer' => true, 'verify_peer_name' => true),
+    ));
+    $res = @file_get_contents($url, false, $ctx);
+    $err = $res === false ? 'stream request failed (allow_url_fopen/openssl unavailable?)' : '';
+    return array($res, $err);
+}
+
 /* --- credentials ------------------------------------------------------------
    Loaded first (and before the POST-only check below) so that ?selftest=1
    can report on them with a plain GET request. */
@@ -58,22 +93,17 @@ if (isset($_GET['selftest'])) {
         'token_length'       => $BOT_TOKEN ? strlen($BOT_TOKEN) : 0,
         'chat_id'            => $CHAT_ID ? $CHAT_ID : null,
         'curl_available'     => function_exists('curl_init'),
+        'allow_url_fopen'    => (bool)ini_get('allow_url_fopen'),
         'can_reach_telegram' => false,
     );
-    if ($result['token_present'] && $result['curl_available']) {
-        $ch = curl_init('https://api.telegram.org/bot' . $BOT_TOKEN . '/getMe');
-        curl_setopt_array($ch, array(
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_TIMEOUT        => 8,
-            CURLOPT_SSL_VERIFYPEER => true,
-            CURLOPT_SSL_VERIFYHOST => 2,
-        ));
-        $res = curl_exec($ch);
-        curl_close($ch);
-        $decoded = json_decode($res, true);
+    if ($result['token_present']) {
+        list($res, $err) = http_post_json('https://api.telegram.org/bot' . $BOT_TOKEN . '/getMe', '{}', 8);
+        $decoded = json_decode((string)$res, true);
         $result['can_reach_telegram'] = is_array($decoded) && !empty($decoded['ok']);
         if (is_array($decoded) && empty($decoded['ok'])) {
             $result['telegram_error'] = isset($decoded['description']) ? $decoded['description'] : 'unknown';
+        } elseif (!is_array($decoded)) {
+            $result['telegram_error'] = $err ? $err : 'no response';
         }
     }
     echo json_encode($result, JSON_PRETTY_PRINT);
@@ -173,21 +203,9 @@ $payload = json_encode(array(
     'disable_web_page_preview' => true,
 ), JSON_UNESCAPED_UNICODE);
 
-$ch = curl_init('https://api.telegram.org/bot' . $BOT_TOKEN . '/sendMessage');
-curl_setopt_array($ch, array(
-    CURLOPT_RETURNTRANSFER => true,
-    CURLOPT_POST           => true,
-    CURLOPT_POSTFIELDS     => $payload,
-    CURLOPT_HTTPHEADER     => array('Content-Type: application/json'),
-    CURLOPT_TIMEOUT        => 12,
-    CURLOPT_SSL_VERIFYPEER => true,
-    CURLOPT_SSL_VERIFYHOST => 2,
-));
-$response = curl_exec($ch);
-$curlErr  = curl_error($ch);
-curl_close($ch);
+list($response, $curlErr) = http_post_json('https://api.telegram.org/bot' . $BOT_TOKEN . '/sendMessage', $payload, 12);
 
-if ($response === false) {
+if ($response === false || $response === null || $response === '') {
     error_log('send.php: could not reach Telegram: ' . $curlErr);
     fail(502, 'telegram_unreachable');
 }
